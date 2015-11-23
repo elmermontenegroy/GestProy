@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gestproy.mybatis.mapper.UsuarioMapper">
+	
+	<select id="getUsuarios" resultType="UsuarioDTO">
+		select UsuarioId, usuario, clave, email, nombre, apellido, fechaNacimiento,tipoUsuarioId, estado from tb_usuario
+	</select>
+	
+	<insert id="registrarUsuario" parameterType="UsuarioDTO" 
+			useGeneratedKeys="true" keyProperty="codigo">
+		insert tb_usuario(UsuarioId, usuario, clave, email, nombre, apellido, fechaNacimiento,tipoUsuarioId, estado)
+		values (#{usuarioId},#{usuario},#{clave},#{email}, #{nombre},#{apellido}, #{fechaNacimiento},#{tipoUsuario},#{estado})
+		<selectKey keyProperty="codigo" resultType="int" order="AFTER">
+			select LAST_INSERT_ID();	
+		</selectKey>
+	</insert>
+	
+	<update id="actualizarUsuario" parameterType="UsuarioDTO">
+		update tb_usuario set  usuario = #{usuario},
+		                       clave = #{clave},
+		                       email= #{email},
+							   nombre = #{nombre},
+							   apellido = #{apellido},
+							   fechaNacimiento = #{fechaNacimiento},
+							   tipoUsuarioId = #{tipoUsuario},
+							   estado = #{estado}
+		where UsuarioId = #{usuarioId}
+	</update>
+	
+	<delete id="eliminarUsuario" parameterType="int">
+		delete from tb_usuario where UsuarioId = #{UsuarioId}
+	</delete>
+	
+	<select id="obtenerUsuarioPorCodigo" 
+			resultType="UsuarioDTO"
+			parameterType="int">
+		select UsuarioId, usuario, clave, email, nombre, apellido, fechaNacimiento,tipoUsuarioId, estado from tb_usuario
+		where UsuarioId = #{UsuarioId}
+	</select>
+	
+	
+</mapper>

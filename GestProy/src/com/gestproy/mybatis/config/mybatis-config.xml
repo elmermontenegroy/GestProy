@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+	<typeAliases>
+		<typeAlias type="com.gestproy.dataobjects.UsuarioDTO" alias="UsuarioDTO"/>
+	</typeAliases>
+
+	<environments default="DEV">
+		<environment id="DEV">
+			<transactionManager type="JDBC" /><!-- JDBC/Manual -->
+			<!-- Unpooled(por cada transaccion se abre y se cierra la conexion), 
+			     Pooled(se gestiona automaticamente por la aplicacion orientada a app desktop), 
+			     JNDI (orientado mas a entornos Web porque los servidores Web
+			           manejan un espacio de memoria especial para manejar pool) -->
+			<dataSource type="UNPOOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver"/>
+				<property name="url" value="jdbc:mysql://localhost/gestproybd"/>
+				<property name="username" value="root"/>
+				<property name="password" value="mysql"/>
+			</dataSource>
+			</environment>		
+	</environments>
+
+	<mappers>
+		<!-- Include your mappers here -->
+		<mapper class="com.gestproy.mybatis.mapper.UsuarioMapper"/>
+	</mappers>
+
+</configuration>
