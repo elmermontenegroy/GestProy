@@ -1,4 +1,4 @@
-package com.gestproy.dataobjects;
+package com.gestproy.beans;
 
 import java.util.Date;
 

@@ -4,9 +4,9 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
-import com.gestproy.dataobjects.UsuarioDTO;
-import com.gestproy.mybatis.db.MyBatisConnectionManager;
-import com.gestproy.mybatis.mapper.UsuarioMapper;
+import com.gestproy.beans.UsuarioDTO;
+import com.gestproy.mybatis.connection.MyBatisConnectionManager;
+import com.gestproy.mybatis.dao.IUsuarioDAO;
 
 public class UsuarioService {
 	
@@ -28,7 +28,7 @@ public class UsuarioService {
 		// Acceder al mapper de la entidad para consumir las operaciones
 		SqlSession sesion = this.obtenerSesion();
 		List<UsuarioDTO> listaEmpleados = 
-				sesion.getMapper(UsuarioMapper.class).getUsuarios();
+				sesion.getMapper(IUsuarioDAO.class).listarUsuarios();
 		//No olvidar cerrar la sesión
 		sesion.close();
 		//Retornar la lista
@@ -42,7 +42,7 @@ public class UsuarioService {
 	public void registrarUsuario(UsuarioDTO usuario) {
 		// Acceder al mapper
 		SqlSession sesion = this.obtenerSesion();
-		sesion.getMapper(UsuarioMapper.class).registrarUsuario(usuario);
+		sesion.getMapper(IUsuarioDAO.class).registrarUsuario(usuario);
 		// Me aseguro que el registro haya sido agregado
 		sesion.commit();
 		//Cierro la sesión
@@ -56,7 +56,7 @@ public class UsuarioService {
 	public void actualizarUsuario(UsuarioDTO usuario) {
 		//Acceder al mapper
 		SqlSession sesion = this.obtenerSesion();
-		sesion.getMapper(UsuarioMapper.class).actualizarUsuario(usuario);
+		sesion.getMapper(IUsuarioDAO.class).actualizarUsuario(usuario);
 		//Me aseguro que el registro fue alterado
 		sesion.commit();
 		//Cierro la sesión
@@ -70,7 +70,7 @@ public class UsuarioService {
 	public void eliminarUsuario(int codigo) {
 		//Acceder al mapper
 		SqlSession sesion = this.obtenerSesion();
-		sesion.getMapper(UsuarioMapper.class).eliminarUsuario(codigo);
+		sesion.getMapper(IUsuarioDAO.class).eliminarUsuario(codigo);
 		//Me aseguro que el registro fue eliminado
 		sesion.commit();
 		//Cierro la sesión
@@ -86,7 +86,7 @@ public class UsuarioService {
 		//Acceder al mapper
 		SqlSession sesion = this.obtenerSesion();
 		UsuarioDTO usuarioConsultado = 
-				sesion.getMapper(UsuarioMapper.class).obtenerUsuarioPorCodigo(codigo);
+				sesion.getMapper(IUsuarioDAO.class).obtenerUsuario(codigo);
 		//Cierro la sesión
 		sesion.close();
 		return usuarioConsultado;

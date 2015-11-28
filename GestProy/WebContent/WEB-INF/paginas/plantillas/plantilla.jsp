@@ -48,7 +48,7 @@
 		            <span class="icon-bar"></span>
 		            <span class="icon-bar"></span>
 		        </button>
-		        <a class="navbar-brand" href="index.html">SB Admin</a>
+		        <a class="navbar-brand" href="index.html">GestProy</a>
 		    </div>
 			<!-- CABECERA -->
 			<tiles:insertAttribute name="cabecera"/>
@@ -64,7 +64,7 @@
     <script src="<s:url value='/recursos/js/jquery.js'/>"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="<s:url value='/recursos/js/bootstrap.min.js'/>../resources/js/bootstrap.min.js"></script>
+    <script src="<s:url value='/recursos/js/bootstrap.min.js'/>"></script>
 
     <!-- Morris Charts JavaScript -->
     <script src="<s:url value='/recursos/js/plugins/morris/raphael.min.js'/>"></script>

@@ -1,8 +1,8 @@
-package com.gestproy.dataobjects;
+package com.gestproy.beans;
 
 import java.util.Date;
 
-public class TareasDTO {
+public class TareaDTO {
 	//Variables
 	private ProyectoDTO proyectoId;
 	private int tareaId;
@@ -12,10 +12,10 @@ public class TareasDTO {
 	private Character estado;
 	
 	//Constructors
-	public TareasDTO() {
+	public TareaDTO() {
 		super();
 	}
-	public TareasDTO(ProyectoDTO proyectoId, int tareaId, String descripcion, Date fechaInicio, Date fechaFin,
+	public TareaDTO(ProyectoDTO proyectoId, int tareaId, String descripcion, Date fechaInicio, Date fechaFin,
 			Character estado) {
 		super();
 		this.proyectoId = proyectoId;

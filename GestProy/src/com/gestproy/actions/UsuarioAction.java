@@ -1,11 +1,11 @@
-package com.gestproy.action;
+package com.gestproy.actions;
 
 import java.util.Map;
 
 import org.apache.struts2.dispatcher.SessionMap;
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.gestproy.dataobjects.UsuarioDTO;
+import com.gestproy.beans.UsuarioDTO;
 import com.gestproy.util.Constantes;
 import com.opensymphony.xwork2.ActionSupport;
 

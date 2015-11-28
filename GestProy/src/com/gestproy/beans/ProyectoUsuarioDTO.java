@@ -1,23 +1,23 @@
-package com.gestproy.dataobjects;
+package com.gestproy.beans;
 
 import java.util.Date;
 
-public class DocumentoDTO {
+public class ProyectoUsuarioDTO {
 	//Variables
 	private ProyectoDTO proyectoId;
-	private int documentoId;
+	private UsuarioDTO usuarioId;
 	private String nombre;
 	private Date fechaInicio;
 	
 	//Constructors
-	public DocumentoDTO() {
+	public ProyectoUsuarioDTO() {
 		super();
 	}
 
-	public DocumentoDTO(ProyectoDTO proyectoId, int documentoId, String nombre, Date fechaInicio) {
+	public ProyectoUsuarioDTO(ProyectoDTO proyectoId, UsuarioDTO usuarioId, String nombre, Date fechaInicio) {
 		super();
 		this.proyectoId = proyectoId;
-		this.documentoId = documentoId;
+		this.usuarioId = usuarioId;
 		this.nombre = nombre;
 		this.fechaInicio = fechaInicio;
 	}
@@ -31,12 +31,12 @@ public class DocumentoDTO {
 		this.proyectoId = proyectoId;
 	}
 
-	public int getDocumentoId() {
-		return documentoId;
+	public UsuarioDTO getUsuarioId() {
+		return usuarioId;
 	}
 
-	public void setDocumentoId(int documentoId) {
-		this.documentoId = documentoId;
+	public void setUsuarioId(UsuarioDTO usuarioId) {
+		this.usuarioId = usuarioId;
 	}
 
 	public String getNombre() {
@@ -53,5 +53,6 @@ public class DocumentoDTO {
 
 	public void setFechaInicio(Date fechaInicio) {
 		this.fechaInicio = fechaInicio;
-	}	
+	}
+	
 }

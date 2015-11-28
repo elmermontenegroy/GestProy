@@ -1,4 +1,4 @@
-package com.gestproy.mybatis.db;
+package com.gestproy.mybatis.connection;
 
 import java.io.Reader;
 

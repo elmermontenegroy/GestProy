@@ -1,4 +1,4 @@
-package com.gestproy.dataobjects;
+package com.gestproy.beans;
 
 public class TipoUsuarioDTO {
 	//Variables

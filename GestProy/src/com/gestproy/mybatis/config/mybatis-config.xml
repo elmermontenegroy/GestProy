@@ -4,17 +4,20 @@
 <configuration>
 
 	<typeAliases>
-		<typeAlias type="com.gestproy.dataobjects.UsuarioDTO" alias="UsuarioDTO"/>
+		<typeAlias type="com.gestproy.beans.DocumentoDTO" alias="DocumentoDTO"/>
+		<typeAlias type="com.gestproy.beans.EmpleadoDTO" alias="EmpleadoDTO"/>
+		<typeAlias type="com.gestproy.beans.PortafolioDTO" alias="PortafolioDTO"/>
+		<typeAlias type="com.gestproy.beans.ProyectoDTO" alias="ProyectoDTO"/>
+		<typeAlias type="com.gestproy.beans.ProyectoUsuarioDTO" alias="ProyectoUsuarioDTO"/>
+		<typeAlias type="com.gestproy.beans.TareasDTO" alias="TareasDTO"/>
+		<typeAlias type="com.gestproy.beans.TipoUsuarioDTO" alias="TipoUsuarioDTO"/>
+		<typeAlias type="com.gestproy.beans.UsuarioDTO" alias="UsuarioDTO"/>
 	</typeAliases>
 
 	<environments default="DEV">
 		<environment id="DEV">
 			<transactionManager type="JDBC" /><!-- JDBC/Manual -->
-			<!-- Unpooled(por cada transaccion se abre y se cierra la conexion), 
-			     Pooled(se gestiona automaticamente por la aplicacion orientada a app desktop), 
-			     JNDI (orientado mas a entornos Web porque los servidores Web
-			           manejan un espacio de memoria especial para manejar pool) -->
-			<dataSource type="UNPOOLED">
+			<dataSource type="POOLED">
 				<property name="driver" value="com.mysql.jdbc.Driver"/>
 				<property name="url" value="jdbc:mysql://localhost/gestproybd"/>
 				<property name="username" value="root"/>
@@ -24,8 +27,13 @@
 	</environments>
 
 	<mappers>
-		<!-- Include your mappers here -->
-		<mapper class="com.gestproy.mybatis.mapper.UsuarioMapper"/>
+		<!-- Incluimos los mappers -->
+		<mapper class="com.gestproy.mybatis.dao.MDocumentoMapper"/>
+		<mapper class="com.gestproy.mybatis.dao.MIntegranteMapper"/>
+		<mapper class="com.gestproy.mybatis.dao.MPortafolioMapper"/>
+		<mapper class="com.gestproy.mybatis.dao.MProyectoMapper"/>
+		<mapper class="com.gestproy.mybatis.dao.MTareaMapper"/>
+		<mapper class="com.gestproy.mybatis.dao.MUsuarioMapper"/>
 	</mappers>
 
 </configuration>

@@ -1,46 +1,41 @@
-package com.gestproy.dataobjects;
+package com.gestproy.beans;
 
-public class PortafolioDTO {
+public class ProyectoDTO {
 	//Variables
-	private int portafolioId;
+	private PortafolioDTO portafolio;
+	private int proyectoId;
 	private String descripcion;
 	private Character estado;
 	
 	//Constructors
-	public PortafolioDTO() {
+	public ProyectoDTO() {
 		super();
 	}
-
-	public PortafolioDTO(int portafolioId, String descripcion, Character estado) {
+	public ProyectoDTO(int proyectoId, String descripcion, Character estado) {
 		super();
-		this.portafolioId = portafolioId;
+		this.proyectoId = proyectoId;
 		this.descripcion = descripcion;
 		this.estado = estado;
 	}
 	
 	//Obtener y Establecer
-	public int getPortafolioId() {
-		return portafolioId;
+	public int getProyectoId() {
+		return proyectoId;
 	}
-
-	public void setPortafolioId(int portafolioId) {
-		this.portafolioId = portafolioId;
+	public void setProyectoId(int proyectoId) {
+		this.proyectoId = proyectoId;
 	}
-
 	public String getDescripcion() {
 		return descripcion;
 	}
-
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-
 	public Character getEstado() {
 		return estado;
 	}
-
 	public void setEstado(Character estado) {
 		this.estado = estado;
 	}
-	
+
 }
