@@ -2,6 +2,7 @@ package com.gestproy.beans;
 
 public class IntegranteDTO {
 	//Variables
+	private ProyectoDTO proyectoId;
 	private int integranteId;
 	private String nombre;
 	private String apellido;
@@ -15,9 +16,10 @@ public class IntegranteDTO {
 		super();
 	}
 
-	public IntegranteDTO(int integranteId, String nombre, String apellido, String email, String fechaNacimiento,
-			Character estado) {
+	public IntegranteDTO(ProyectoDTO proyectoId, int integranteId, String nombre, String apellido, String email,
+			String fechaNacimiento, Character estado) {
 		super();
+		this.proyectoId = proyectoId;
 		this.integranteId = integranteId;
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -25,8 +27,16 @@ public class IntegranteDTO {
 		this.fechaNacimiento = fechaNacimiento;
 		this.estado = estado;
 	}
-	
+
 	//Obtener y Establecer
+	public ProyectoDTO getProyectoId() {
+		return proyectoId;
+	}
+
+	public void setProyectoId(ProyectoDTO proyectoId) {
+		this.proyectoId = proyectoId;
+	}
+
 	public int getIntegranteId() {
 		return integranteId;
 	}

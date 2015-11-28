@@ -3,7 +3,7 @@
 
 <mapper namespace="com.gestproy.mybatis.dao.MUsuarioMapper">
 
-	<insert id="registrarCliente" parameterType="cliente" useGeneratedKeys="true" keyProperty="codigo">
+	<insert id="registrarUsuario" parameterType="cliente" useGeneratedKeys="true" keyProperty="codigo">
 		insert into tb_cliente (codigo, dni, nombre, apellido, edad, correo, celular)
 		values (#{codigo}, #{dni}, #{nombre}, #{apellido}, #{edad}, #{correo}, #{celular})
 		<selectKey order="AFTER" resultType="int" keyProperty="codigo">
@@ -11,7 +11,7 @@
 		</selectKey>
 	</insert>
 
-	<update id="actualizarCliente" parameterType="cliente">
+	<update id="actualizarUsuario" parameterType="cliente">
 		update tb_cliente set dni = #{dni},
 		 				      nombre = #{nombre}, 
 		 				      apellido = #{apellido}, 
@@ -21,18 +21,16 @@
 		where codigo = #{codigo}
 	</update>
 
-	<delete id="eliminarCliente" parameterType="int">
+	<delete id="eliminarUsuario" parameterType="int">
 		delete from tb_cliente where codigo = #{codigo}
 	</delete>
 
-	<select id="listarClientes" resultType="cliente">
+	<select id="listarUsuarios" resultType="cliente">
 		select codigo, dni, nombre, apellido, edad, correo, celular 
 		from tb_cliente 
 	</select>
 
-	<select id="obtenerUsuarioPorCodigo" 
-			resultType="UsuarioDTO"
-			parameterType="int">
+	<select id="obtenerUsuario"	resultType="UsuarioDTO"	parameterType="int">
 		select UsuarioId, usuario, clave, email, nombre, apellido, fechaNacimiento,tipoUsuarioId, estado from tb_usuario
 		where UsuarioId = #{UsuarioId}
 	</select>

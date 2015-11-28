@@ -1,7 +1,5 @@
 package com.gestproy.beans;
 
-import java.util.Date;
-
 public class UsuarioDTO {
 	//Variables
 	private int usuarioId;
