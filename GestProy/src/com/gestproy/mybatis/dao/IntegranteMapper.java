@@ -10,7 +10,7 @@ import com.gestproy.beans.IntegranteDTO;
  * @author suite701
  *
  */
-public interface MIntegranteMapper {
+public interface IntegranteMapper {
 
 	public int registrarIntegrante(IntegranteDTO integrante);
 	public void actualizarIntegrante(IntegranteDTO integrante);

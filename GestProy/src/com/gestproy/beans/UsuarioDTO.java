@@ -9,16 +9,16 @@ public class UsuarioDTO {
 	private String nombre;
 	private String apellido;
 	private String fechaNacimiento;
-	private int tipoUsuario;
+	private TipoUsuarioDTO tipoUsuario;
 	private Character estado;
 	
 	//Constructors
 	public UsuarioDTO() {
 		super();
 	}
-	
+
 	public UsuarioDTO(int usuarioId, String usuario, String clave, String email, String nombre, String apellido,
-			String fechaNacimiento, int tipoUsuario, Character estado) {
+			String fechaNacimiento, TipoUsuarioDTO tipoUsuario, Character estado) {
 		super();
 		this.usuarioId = usuarioId;
 		this.usuario = usuario;
@@ -30,7 +30,6 @@ public class UsuarioDTO {
 		this.tipoUsuario = tipoUsuario;
 		this.estado = estado;
 	}
-
 
 	//Obtener y Establecer
 	public int getUsuarioId() {
@@ -75,10 +74,10 @@ public class UsuarioDTO {
 	public void setFechaNacimiento(String fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
-	public int getTipoUsuario() {
+	public TipoUsuarioDTO getTipoUsuario() {
 		return tipoUsuario;
 	}
-	public void setTipoUsuario(int tipoUsuario) {
+	public void setTipoUsuario(TipoUsuarioDTO tipoUsuario) {
 		this.tipoUsuario = tipoUsuario;
 	}
 	public Character getEstado() {

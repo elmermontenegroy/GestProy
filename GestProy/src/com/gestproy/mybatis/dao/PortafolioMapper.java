@@ -10,7 +10,7 @@ import com.gestproy.beans.PortafolioDTO;
  * @author suite701
  *
  */
-public interface MPortafolioMapper {
+public interface PortafolioMapper {
 
 	public int registrarPortafolio(PortafolioDTO portafolio);
 	public void actualizarPortafolio(PortafolioDTO portafolio);

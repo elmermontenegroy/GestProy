@@ -4,7 +4,13 @@ import java.util.List;
 
 import com.gestproy.beans.TareaDTO;
 
-public interface ITareaDAO {
+/**
+ * Esta clase contiene los metodos que utilizara el Mapper XML
+ * de MyBatis
+ * @author suite701
+ *
+ */
+public interface TareaMapper {
 
 	public int registrarTarea(TareaDTO tarea);
 	public void actualizarTarea(TareaDTO tarea);

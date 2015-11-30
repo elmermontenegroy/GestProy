@@ -4,7 +4,13 @@ import java.util.List;
 
 import com.gestproy.beans.DocumentoDTO;
 
-public interface IDocumentoDAO {
+/**
+ * Esta clase contiene los metodos que utilizara el Mapper XML
+ * de MyBatis
+ * @author suite701
+ *
+ */
+public interface DocumentoMapper {
 
 	public int registrarDocumento(DocumentoDTO documento);
 	public void actualizarDocumento(DocumentoDTO documento);
