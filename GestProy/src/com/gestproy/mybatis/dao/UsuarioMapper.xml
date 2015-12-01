@@ -4,7 +4,7 @@
 <mapper namespace="com.gestproy.mybatis.dao.UsuarioMapper">
 
 	<insert id="registrarUsuario" parameterType="UsuarioDTO" statementType="CALLABLE">
-		{call sp_usuario_insertar(#{usuarioId,mode=OUT,javaType=int,jdbcType=INTEGER}, 
+		{call sp_usuario_insertar(#{usuarioId,mode=OUT,jdbcType=INTEGER}, 
 								 #{usuario,mode=IN}, 
 								 #{clave,mode=IN}, 
 								 #{email,mode=IN}, 
