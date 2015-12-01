@@ -19,7 +19,7 @@ public class UsuarioTest {
 		servicioUsuario = new UsuarioService();
 	}
 	
-	@Test
+	//@Test
 	public void testRegistrarUsuario() {
 		UsuarioDTO usuario = new UsuarioDTO();
 		usuario.setTipoUsuario(new TipoUsuarioDTO());
@@ -45,7 +45,7 @@ public class UsuarioTest {
 		fail("Not yet implemented");
 	}
 
-	//@Test
+	@Test
 	public void testListarUsuarios() {
 		List<UsuarioDTO> listUsuarios;
 		UsuarioDTO usuario = new UsuarioDTO();

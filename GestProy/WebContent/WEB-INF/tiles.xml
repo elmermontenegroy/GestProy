@@ -16,25 +16,28 @@
 		<put-attribute name="contenido" value="/WEB-INF/paginas/principal.jsp"/>	
 	</definition>
 	
-	<definition name="d_edicionVendedor" extends="d_plantilla">
-		<put-attribute name="contenido" value="/WEB-INF/paginas/vendedor/edicion.jsp"/>	
+	<definition name="d_usuario" extends="d_plantilla">
+		<put-attribute name="contenido" value="/WEB-INF/paginas/usuario/listar.jsp"/>	
 	</definition>
 	
-	<definition name="d_listadoVendedor" extends="d_plantilla">
-		<put-attribute name="contenido" value="/WEB-INF/paginas/vendedor/listado.jsp"/>	
+	<definition name="d_portafolio" extends="d_plantilla">
+		<put-attribute name="contenido" value="/WEB-INF/paginas/portafolio/listar.jsp"/>	
 	</definition>
 	
-	<definition name="d_detalleVendedor" extends="d_plantilla">
-		<put-attribute name="contenido" value="/WEB-INF/paginas/vendedor/detalle.jsp"/>	
+	<definition name="d_proyecto" extends="d_plantilla">
+		<put-attribute name="contenido" value="/WEB-INF/paginas/proyecto/listar.jsp"/>	
 	</definition>
 	
-	<definition name="d_nuevoEmpleado" extends="d_plantilla">
-		<put-attribute name="contenido" value="/WEB-INF/paginas/empleado/nuevo.jsp"/>	
+	<definition name="d_tarea" extends="d_plantilla">
+		<put-attribute name="contenido" value="/WEB-INF/paginas/tarea/listar.jsp"/>	
 	</definition>
 	
-	<definition name="d_resultadoEmpleado" extends="d_plantilla">
-		<put-attribute name="contenido" value="/WEB-INF/paginas/empleado/resultado.jsp"/>	
+	<definition name="d_documento" extends="d_plantilla">
+		<put-attribute name="contenido" value="/WEB-INF/paginas/documento/listar.jsp"/>	
 	</definition>
 	
+	<definition name="d_integrante" extends="d_plantilla">
+		<put-attribute name="contenido" value="/WEB-INF/paginas/integrante/listar.jsp"/>	
+	</definition>
 	
 </tiles-definitions>

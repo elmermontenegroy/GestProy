@@ -1,6 +1,4 @@
-<%@ taglib prefix="s"  uri="/struts-tags" %>
-
-		<h2><s:text name="titulo.vendedor.busqueda"/></h2>
+<h2><s:text name="titulo.vendedor.busqueda"/></h2>
 		
 		<!-- FORMULARIO DE BUSQUEDA -->
 		<s:form action="buscarVendedor" namespace="/vendedor">
