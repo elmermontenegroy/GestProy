@@ -25,7 +25,7 @@ public class UsuarioService {
 		sesion.getMapper(UsuarioMapper.class).registrarUsuario(usuario);
 		// Me aseguro que el registro haya sido agregado
 		sesion.commit();
-		//Cierro la sesiÃ³n
+		//Cierro la sesión
 		sesion.close();
 	}
 	
