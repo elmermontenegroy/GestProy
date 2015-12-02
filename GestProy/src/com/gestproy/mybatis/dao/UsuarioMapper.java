@@ -12,7 +12,7 @@ import com.gestproy.beans.UsuarioDTO;
  */
 public interface UsuarioMapper {
 
-	public int registrarUsuario(UsuarioDTO usuario);
+	public void registrarUsuario(UsuarioDTO usuario);
 	public void actualizarUsuario(UsuarioDTO usuario);
 	public void eliminarUsuario(int codigo);
 	public List<UsuarioDTO>listarUsuarios(UsuarioDTO usuario);

@@ -10,6 +10,9 @@
             <ul id="demo" class="collapse">
                 <li>
                     <a href="#">Usuarios</a>
+                    <a	href="<s:url action="inicializarVendedor" namespace="/vendedor"/>">
+						<s:text name="accion.mantenimiento" />
+					</a>
                 </li>
                 <li>
                     <a href="#">Portafolios</a>

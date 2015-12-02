@@ -3,12 +3,16 @@
 
 <mapper namespace="com.gestproy.mybatis.dao.UsuarioMapper">
 
-	<insert id="registrarUsuario" parameterType="UsuarioDTO" useGeneratedKeys="true" keyProperty="codigo">
-		insert into tb_usuario (usuarioId, usuario, clave, email, nombre, apellido, fechaNacimiento, tipoUsuario, estado)
-		values (#{usuarioId}, #{usuario}, #{clave}, #{email}, #{nombre}, #{apellido}, #{fechaNacimiento}, #{tipoUsuario}, #{estado})
-		<selectKey order="AFTER" resultType="int" keyProperty="usuarioId">
-			select LAST_INSERT_ID();
-		</selectKey>
+	<insert id="registrarUsuario" parameterType="UsuarioDTO" statementType="CALLABLE">
+		{call sp_usuario_insertar(#{usuarioId,mode=OUT,jdbcType=INTEGER}, 
+								 #{usuario,mode=IN}, 
+								 #{clave,mode=IN}, 
+								 #{email,mode=IN}, 
+								 #{nombre,mode=IN}, 
+								 #{apellido,mode=IN}, 
+								 #{fechaNacimiento,mode=IN}, 
+								 #{tipoUsuario.tipoUsuarioId,mode=IN}, 
+								 #{estado,mode=IN})};
 	</insert>
 
 	<update id="actualizarUsuario" parameterType="UsuarioDTO">
@@ -27,15 +31,34 @@
 		delete from tb_usuario where usuarioId = #{UsuarioId}
 	</delete>
 
-	<select id="listarUsuarios" resultType="UsuarioDTO" parameterType="UsuarioDTO">
-		select usuarioId, usuario, clave, email, nombre, apellido, fechaNacimiento, tipoUsuarioId, estado 
-		from tb_usuario
+	<select id="listarUsuarios" parameterType="UsuarioDTO" resultMap="rListar" statementType="CALLABLE">
+		{ call sp_usuario_listar(#{usuarioId, jdbcType=BIGINT}, 
+                                 #{usuario, jdbcType=VARCHAR}, 
+                                 #{clave, jdbcType=VARCHAR},
+                                 #{email, jdbcType=VARCHAR}, 
+                                 #{nombre, jdbcType=VARCHAR}, 
+                                 #{apellido, jdbcType=VARCHAR},
+                                 #{fechaNacimiento, jdbcType=VARCHAR}, 
+                                 #{tipoUsuario.tipoUsuarioId, jdbcType=DATE}, 
+                                 #{estado, jdbcType=VARCHAR}) }
 	</select>
 
-	<select id="obtenerUsuario"	resultType="UsuarioDTO" parameterType="UsuarioDTO">
+	<select id="obtenerUsuario" parameterType="UsuarioDTO" resultType="UsuarioDTO">
 		select usuarioId, usuario, clave, email, nombre, apellido, fechaNacimiento, tipoUsuario, estado 
 		from tb_usuario
 		where usuarioId = #{usuarioId}
 	</select>
-
+	
+	<!-- RESULTS MAPS -->
+	<resultMap id="rListar" type="UsuarioDTO" >
+        <result property="usuarioId"                         	column="UsuarioId" />
+        <result property="usuario"                      		column="Usuario" />
+        <result property="clave"                           		column="Clave" />
+        <result property="email"                           		column="Email" />
+        <result property="nombre"                              	column="Nombre" />
+       	<result property="apellido"                          	column="Apellido" />
+        <result property="fechaNacimiento"              		column="FechaNacimiento" />
+        <result property="tipoUsuario.tipoUsuarioId"            column="TipoUsuarioId" />
+        <result property="estado"             					column="Estado" />
+    </resultMap> 
 </mapper>

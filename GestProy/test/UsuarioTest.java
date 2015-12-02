@@ -5,6 +5,7 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.gestproy.beans.TipoUsuarioDTO;
 import com.gestproy.beans.UsuarioDTO;
 import com.gestproy.service.UsuarioService;
 
@@ -20,7 +21,18 @@ public class UsuarioTest {
 	
 	//@Test
 	public void testRegistrarUsuario() {
-		fail("Not yet implemented");
+		UsuarioDTO usuario = new UsuarioDTO();
+		usuario.setTipoUsuario(new TipoUsuarioDTO());
+		usuario.setUsuario("user");
+		usuario.setClave("1234");
+		usuario.setEmail("user@gmail.com");
+		usuario.setNombre("name");
+		usuario.setApellido("latname");
+		usuario.setFechaNacimiento("2010/10/02");
+		usuario.getTipoUsuario().setTipoUsuarioId(1);
+		usuario.setEstado('A');
+		servicioUsuario.registrarUsuario(usuario);
+		System.out.println("UsuarioId: "+usuario.getUsuarioId());
 	}
 
 	//@Test
@@ -37,12 +49,14 @@ public class UsuarioTest {
 	public void testListarUsuarios() {
 		List<UsuarioDTO> listUsuarios;
 		UsuarioDTO usuario = new UsuarioDTO();
-		usuario.setUsuario("emontenegro");
+		usuario.setUsuario("");
 		listUsuarios = servicioUsuario.listarUsuarios(usuario);
 		if(listUsuarios!=null && !listUsuarios.isEmpty()){
-			System.out.println("OK");
+			for(UsuarioDTO u : listUsuarios){
+				System.out.println(u.toString());
+			}
 		}else{
-			System.out.println("BAD");
+			System.out.println("MAL");
 		}
 	}
 
