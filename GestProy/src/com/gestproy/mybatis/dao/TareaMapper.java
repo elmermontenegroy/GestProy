@@ -15,7 +15,7 @@ public interface TareaMapper {
 	public int registrarTarea(TareaDTO tarea);
 	public void actualizarTarea(TareaDTO tarea);
 	public void eliminarTarea(int codigo);
-	public List<TareaDTO>listarTareas();
+	public List<TareaDTO>listarTareas(TareaDTO tarea);
 	public TareaDTO obtenerTarea(int codigo);
 	
 }

@@ -56,7 +56,117 @@
 		<action name="inicio">
 			<result>/WEB-INF/paginas/login.jsp</result>
 		</action>
+		
+<!-- Todos los actions de Tareas______________________________________________________________________________________ -->
+		<action name="ListarTareasAction" class="com.gestproy.actions.TareaAction" 
+		method="listarTareas">
+		<result name="success">/WEB-INF/paginas/tarea/listado.jsp</result>
+		</action>
+		
+		
+	    <action name="InicializarTareaAction" class="com.gestproy.actions.TareaAction">
+		<result name="success">/WEB-INF/paginas/tarea/registrar.jsp</result>
+		</action>
+		
+	    <action name="BienvenidoTareaAction" class="com.gestproy.actions.TareaAction">
+		<result name="success">/WEB-INF/paginas/tarea/bienvenido.jsp</result>
+		</action>
+		
+		<action name="RegistrarTareaAction" class="com.gestproy.actions.TareaAction" 
+		method="registrarTarea">
+		<result name="success" type="redirectAction">InicializarTareaAction</result>
+		<result name="input">registrar.jsp</result>
+		</action>
+	
+		
+		 <action name="InicializarActualizarTareaAction" class="com.gestproy.actions.TareaAction" method="inicializarActualizar">
+			<result name="success">/WEB-INF/paginas/tarea/actualizar.jsp</result>
+		</action>
+         
+         
+        <action name="RefrescarActualizarTareaAction" class="com.gestproy.actions.TareaAction">
+		<result name="success">/WEB-INF/paginas/tarea/listado.jsp</result>
+		</action>
+         
+         
+        <action name="ActualizarTareaAction" class="com.gestproy.actions.TareaAction" 
+		method="actualizarTarea">
+		<result name="success" type="redirectAction">RefrescarActualizarTareaAction</result>
+
+		</action>
+		
+		<action name="EliminarTareaAction" class="com.gestproy.actions.TareaAction" method="eliminarTarea">
+			<result name="success" type="redirectAction">DespuesEliminarTareaAction</result>
+		</action>
+			
+		<action name="DespuesEliminarTareaAction" class="com.gestproy.actions.TareaAction">
+		<result name="success">/WEB-INF/paginas/tarea/listado.jsp</result>
+		</action>
+		
 
 
+        <action name="RegresarBienvenidoTareaAction" class="com.gestproy.actions.TareaAction">
+		<result name="success">/WEB-INF/paginas/tarea/bienvenido.jsp</result>
+		</action>
+<!--__________________________________________________________________________________________________________________________________________________-  -->
+		
+		
+		
+<!-- Todos los actions de Documentos___________________________________________________________________________________________________ -->
+		
+		<action name="ListarDocumentosAction" class="com.gestproy.actions.DocumentoAction" 
+		method="listarDocumentos">
+		<result name="success">/WEB-INF/paginas/documento/listado.jsp</result>
+		</action>
+		
+		
+	    <action name="InicializarDocumentoAction" class="com.gestproy.actions.DocumentoAction">
+		<result name="success">/WEB-INF/paginas/documento/registrar.jsp</result>
+		</action>
+		
+	    <action name="BienvenidoDocumentoAction" class="com.gestproy.actions.DocumentoAction">
+		<result name="success">/WEB-INF/paginas/documento/bienvenido.jsp</result>
+		</action>
+		
+		<action name="RegistrarDocumentoAction" class="com.gestproy.actions.DocumentoAction" 
+		method="registrarDocumento">
+		<result name="success" type="redirectAction">InicializarDocumentoAction</result>
+		<result name="input">registrar.jsp</result>
+		</action>
+		
+		
+		 <action name="InicializarActualizarDocumentoAction" class="com.gestproy.actions.DocumentoAction" 
+		 method="inicializarActualizar">
+			<result name="success">/WEB-INF/paginas/documento/actualizar.jsp</result>
+		</action>
+         
+         
+        <action name="RefrescarActualizarDocumentoAction" class="com.gestproy.actions.DocumentoAction">
+		<result name="success">/WEB-INF/paginas/documento/listado.jsp</result>
+		</action>
+         
+         
+        <action name="ActualizarDocumentoAction" class="com.gestproy.actions.DocumentoAction" 
+		method="actualizarDocumento">
+		<result name="success" type="redirectAction">RefrescarActualizarDocumentoAction</result>
+
+		</action>
+		
+		<action name="EliminarDocumentoAction" class="com.gestproy.actions.DocumentoAction" method="eliminarDocumento">
+			<result name="success" type="redirectAction">RefrescarActualizarDocumentoAction</result>
+		</action>
+		
+		
+	   <action name="DespuesEliminarDocumentoAction" class="com.gestproy.actions.DocumentoAction">
+		<result name="success">/WEB-INF/paginas/documento/listado.jsp</result>
+		</action>
+
+
+        <action name="RegresarBienvenidoDocumentoAction" class="com.gestproy.actions.TareaAction">
+		<result name="success">/WEB-INF/paginas/documento/bienvenido.jsp</result>
+		</action>
+<!-- _________________________________________________________________________________________________________________________  -->
+		
+		
 	</package>
 </struts>

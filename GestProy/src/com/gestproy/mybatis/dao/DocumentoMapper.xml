@@ -4,5 +4,34 @@
 <mapper namespace="com.gestproy.mybatis.dao.DocumentoMapper">
 
 
+	<insert id="registrarDocumento" parameterType="DocumentoDTO" useGeneratedKeys="true" keyProperty="documentoId">
+		insert into tb_documento (documentoId, proyectoId, nombre, fechaInicio)
+		values (#{documentoId}, #{proyectoId}, #{nombre}, #{fechaInicio})
+		<selectKey order="AFTER" resultType="int" keyProperty="documentoId">
+			select LAST_INSERT_ID();
+		</selectKey>
+	</insert>
+
+	<update id="actualizarDocumento" parameterType="DocumentoDTO">
+		update tb_documento set proyectoId = #{proyectoId}, 
+		 				      nombre = #{nombre}, 
+		 				      fechaInicio = #{fechaInicio}
+		where documentoId = #{documentoId}
+	</update>
+
+	<delete id="eliminarDocumento" parameterType="int">
+		delete from tb_documento where documentoId = #{documentoId}
+	</delete>
+
+	<select id="listarDocumentos" resultType="DocumentoDTO" parameterType="DocumentoDTO">
+		select documentoId,proyectoId,nombre,fechaInicio from tb_documento
+	</select>
+
+	<select id="obtenerDocumento" resultType="DocumentoDTO" parameterType="DocumentoDTO">
+		select documentoId,proyectoId,nombre,fechaInicio from tb_documento
+		where documentoId = #{documentoId}
+	</select>
+
+
 
 </mapper>

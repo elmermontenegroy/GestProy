@@ -4,18 +4,18 @@ import java.util.Date;
 
 public class TareaDTO {
 	//Variables
-	private ProyectoDTO proyectoId;
+	private int proyectoId;
 	private int tareaId;
 	private String descripcion;
-	private Date fechaInicio;
-	private Date fechaFin;
+	private String fechaInicio;
+	private String fechaFin;
 	private Character estado;
 	
 	//Constructors
 	public TareaDTO() {
 		super();
 	}
-	public TareaDTO(ProyectoDTO proyectoId, int tareaId, String descripcion, Date fechaInicio, Date fechaFin,
+	public TareaDTO(int proyectoId, int tareaId, String descripcion, String fechaInicio, String fechaFin,
 			Character estado) {
 		super();
 		this.proyectoId = proyectoId;
@@ -27,10 +27,10 @@ public class TareaDTO {
 	}
 	
 	//Obtener y Establecer
-	public ProyectoDTO getProyectoId() {
+	public int getProyectoId() {
 		return proyectoId;
 	}
-	public void setProyectoId(ProyectoDTO proyectoId) {
+	public void setProyectoId(int proyectoId) {
 		this.proyectoId = proyectoId;
 	}
 	public int getTareaId() {
@@ -45,16 +45,16 @@ public class TareaDTO {
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-	public Date getFechaInicio() {
+	public String getFechaInicio() {
 		return fechaInicio;
 	}
-	public void setFechaInicio(Date fechaInicio) {
+	public void setFechaInicio(String fechaInicio) {
 		this.fechaInicio = fechaInicio;
 	}
-	public Date getFechaFin() {
+	public String getFechaFin() {
 		return fechaFin;
 	}
-	public void setFechaFin(Date fechaFin) {
+	public void setFechaFin(String fechaFin) {
 		this.fechaFin = fechaFin;
 	}
 	public Character getEstado() {

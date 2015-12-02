@@ -3,6 +3,36 @@
 
 <mapper namespace="com.gestproy.mybatis.dao.TareaMapper">
 
+	<insert id="registrarTarea" parameterType="TareaDTO" useGeneratedKeys="true" keyProperty="tareaId">
+		insert into tb_tarea (tareaId, proyectoId, descripcion, fechaInicio, fechaFin, estado)
+		values (#{tareaId}, #{proyectoId}, #{descripcion}, #{fechaInicio}, #{fechaFin}, #{estado})
+		<selectKey order="AFTER" resultType="int" keyProperty="tareaId">
+			select LAST_INSERT_ID();
+		</selectKey>
+	</insert>
 
+	<update id="actualizarTarea" parameterType="TareaDTO">
+		update tb_tarea set proyectoId = #{proyectoId}, 
+		 				      descripcion = #{descripcion}, 
+		 				      fechaInicio = #{fechaInicio}, 
+		 				      fechaFin = #{fechaFin}, 
+		 				      estado = #{estado}
+		where tareaId = #{tareaId}
+	</update>
+
+	<delete id="eliminarTarea" parameterType="int">
+		delete from tb_tarea where tareaId = #{tareaId}
+	</delete>
+
+	<select id="listarTareas" resultType="TareaDTO" parameterType="TareaDTO">
+		select tareaId,proyectoId,descripcion,fechaInicio,fechaFin,estado
+		from tb_tarea
+	</select>
+
+	<select id="obtenerTarea" resultType="TareaDTO" parameterType="TareaDTO">
+		select tareaId,proyectoId,descripcion,fechaInicio, fechaFin,estado
+		from tb_tarea
+		where tareaId = #{tareaId}
+	</select>
 
 </mapper>

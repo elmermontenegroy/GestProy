@@ -1,3 +1,4 @@
+<%@taglib prefix="s" uri="/struts-tags"%>
 <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
 <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav side-nav">
@@ -17,10 +18,10 @@
                     <a href="#">Proyectos</a>
                 </li>
                 <li>
-                    <a href="#">Tareas</a>
+                 <a href="<s:url action="BienvenidoTareaAction"></s:url>"> Tareas</a>
                 </li>
                 <li>
-                    <a href="#">Documentos</a>
+                  <a href="<s:url action="BienvenidoDocumentoAction"></s:url>">Documentos</a>
                 </li>
                 <li>
                     <a href="#">Integrantes</a>
@@ -40,10 +41,10 @@
                     <a href="#">Proyectos</a>
                 </li>
                 <li>
-                    <a href="#">Tareas</a>
+                    <a href="<s:url action="BienvenidoTareaAction"></s:url>">Tareas</a>
                 </li>
                 <li>
-                    <a href="#">Documentos</a>
+                    <a href="<s:url action="BienvenidoDocumentoAction"></s:url>">Documentos</a>
                 </li>
                 <li>
                     <a href="#">Integrantes</a>

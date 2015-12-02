@@ -2,7 +2,7 @@ package com.gestproy.beans;
 
 public class ProyectoDTO {
 	//Variables
-	private PortafolioDTO portafolio;
+
 	private int proyectoId;
 	private String descripcion;
 	private Character estado;
@@ -13,10 +13,12 @@ public class ProyectoDTO {
 	}
 	public ProyectoDTO(int proyectoId, String descripcion, Character estado) {
 		super();
+
 		this.proyectoId = proyectoId;
 		this.descripcion = descripcion;
 		this.estado = estado;
 	}
+	
 	
 	//Obtener y Establecer
 	public int getProyectoId() {
