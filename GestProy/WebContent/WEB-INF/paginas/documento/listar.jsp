@@ -8,7 +8,7 @@
 	            <h1 class="page-header">
 	                <s:text name="modulo.documento.desc" />
 	            </h1>
-	        </div>
+	         </div>
 	    </div>
 	    
 	    <div class="row">

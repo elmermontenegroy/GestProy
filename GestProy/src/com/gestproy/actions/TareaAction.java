@@ -17,12 +17,12 @@ public class TareaAction extends ActionSupport implements Preparable {
 	@Override
 	public void prepare() throws Exception {
 		
-
+ 
 		setTareas(obtenerListaDeTareas());
 		
 		 System.out.println("Prepare Updating ...");  
 
-	}
+	 }
 	
 	
 	//Metodos

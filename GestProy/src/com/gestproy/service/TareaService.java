@@ -10,7 +10,7 @@ import com.gestproy.mybatis.connection.MyBatisConnectionManager;
 import com.gestproy.mybatis.dao.TareaMapper;
 import com.gestproy.mybatis.dao.UsuarioMapper;
 
-public class TareaService {
+public class TareaService { 
 	
 	
 	private SqlSession obtenerSesion() {

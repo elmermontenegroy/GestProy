@@ -9,8 +9,8 @@
 </head>
 <body>
 
-<h1>Actualizar una nueva Tarea</h1>
-
+<h1>Actualizar una nueva Tarea  </h1>
+ 
 <s:form action="ActualizarTareaAction">
 
 	<s:textfield name="tarea.tareaId" label="Tarea Id" readonly="true"/>

@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-   <a href="<s:url action="ListarTareasAction"></s:url>">Listar Tareas</a></br></br>
+    <a href="<s:url action="ListarTareasAction"></s:url>">Listar Tareas</a></br></br>
    <a href="<s:url action="InicializarTareaAction"></s:url>">Registrar Tarea</a>
 </body>
 </html>

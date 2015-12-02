@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<h1 align="center">Listado de Tareas</h1>
+<h1 align="center">Listado de Tareas </h1>
 
 <s:if test="!tareas.isEmpty">
 	<table border=1>

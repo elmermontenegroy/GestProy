@@ -23,7 +23,7 @@ public class DocumentoAction extends ActionSupport implements Preparable {
 		
 		 System.out.println("Prepare Updating ...");  
 
-	}
+	  }
 	
 	
 	//Metodos

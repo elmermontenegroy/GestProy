@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Mantenimiento de Documentos</title>
+<title>Mantenimiento de Documentos </title>
 </head>
 <body>
       <a href="<s:url action="ListarDocumentosAction"></s:url>">Listar Documentos</a></br></br>

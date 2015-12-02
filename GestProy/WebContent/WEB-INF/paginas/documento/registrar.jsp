@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<h1>Registrar una nuevo Documento</h1>
+<h1>Registrar una nuevo Documento </h1>
 
 <s:form action="RegistrarDocumentoAction">
 

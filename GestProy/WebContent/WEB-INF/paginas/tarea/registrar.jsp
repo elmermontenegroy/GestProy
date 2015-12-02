@@ -11,7 +11,7 @@
 
 <h1>Registrar una nueva Tarea</h1>
 
-<s:form action="RegistrarTareaAction">
+ <s:form action="RegistrarTareaAction">
 
 	<s:textfield name="tarea.tareaId" label="Tarea Id"/>
 	<s:textfield name="tarea.proyectoId" label="Proyecto Id"/>

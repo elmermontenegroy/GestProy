@@ -3,7 +3,7 @@
 
 <mapper namespace="com.gestproy.mybatis.dao.DocumentoMapper">
 
-
+ 
 	<insert id="registrarDocumento" parameterType="DocumentoDTO" useGeneratedKeys="true" keyProperty="documentoId">
 		insert into tb_documento (documentoId, proyectoId, nombre, fechaInicio)
 		values (#{documentoId}, #{proyectoId}, #{nombre}, #{fechaInicio})
