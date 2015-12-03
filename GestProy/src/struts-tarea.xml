@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="struts-tarea" extends="demo" namespace="/tarea">
+	
+		<action name="inicializarTarea" class="com.gestproy.actions.TareaAction">
+			<result type="tiles">d_tarea_listar</result>
+		</action>
+		
+		<action name="cargarRegistrarTarea" class="com.gestproy.actions.TareaAction" method="cargarRegistrar">
+			<result type="tiles">d_tarea_registrar</result>
+		</action>
+		
+		<action name="registrarTarea" class="com.gestproy.actions.TareaAction" method="registrar">
+			<result type="tiles">d_tarea_listar</result>
+		</action>
+		
+		<action name="cargarActualizarTarea" class="com.gestproy.actions.TareaAction" method="cargarActualizar">
+			<result type="tiles">d_tarea_actualizar</result>
+		</action>
+		
+		<action name="actualizarTarea" class="com.gestproy.actions.TareaAction" method="actualizar">
+			<result type="tiles">d_tarea_listar</result>
+		</action>
+		
+		<action name="eliminarTarea" class="com.gestproy.actions.TareaAction" method="eliminar">
+			<result type="tiles">d_tarea_listar</result>
+		</action>
+		
+	</package>
+</struts>

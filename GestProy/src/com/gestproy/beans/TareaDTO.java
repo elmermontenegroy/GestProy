@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class TareaDTO {
 	//Variables
-	private int proyectoId;
+	private ProyectoDTO proyecto;
 	private int tareaId;
 	private String descripcion;
 	private String fechaInicio; 
@@ -15,23 +15,25 @@ public class TareaDTO {
 	public TareaDTO() {
 		super();
 	}
-	public TareaDTO(int proyectoId, int tareaId, String descripcion, String fechaInicio, String fechaFin,
+		
+	public TareaDTO(ProyectoDTO proyecto, int tareaId, String descripcion, String fechaInicio, String fechaFin,
 			Character estado) {
 		super();
-		this.proyectoId = proyectoId;
+		this.proyecto = proyecto;
 		this.tareaId = tareaId;
 		this.descripcion = descripcion;
 		this.fechaInicio = fechaInicio;
 		this.fechaFin = fechaFin;
 		this.estado = estado;
 	}
-	
+
+
 	//Obtener y Establecer
-	public int getProyectoId() {
-		return proyectoId;
+	public ProyectoDTO getProyecto() {
+		return proyecto;
 	}
-	public void setProyectoId(int proyectoId) {
-		this.proyectoId = proyectoId;
+	public void setProyecto(ProyectoDTO proyecto) {
+		this.proyecto = proyecto;
 	}
 	public int getTareaId() {
 		return tareaId;

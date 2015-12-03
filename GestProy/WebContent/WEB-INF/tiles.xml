@@ -16,28 +16,76 @@
 		<put-attribute name="contenido" value="/WEB-INF/paginas/principal.jsp"/>	
 	</definition>
 	
-	<definition name="d_usuario" extends="d_plantilla">
+	<definition name="d_usuario_listar" extends="d_plantilla">
 		<put-attribute name="contenido" value="/WEB-INF/paginas/usuario/listar.jsp"/>	
 	</definition>
+
+	<definition name="d_usuario_registrar" extends="d_plantilla">
+		<put-attribute name="contenido" value="/WEB-INF/paginas/usuario/registrar.jsp"/>	
+	</definition>
+
+	<definition name="d_usuario_actualizar" extends="d_plantilla">
+		<put-attribute name="contenido" value="/WEB-INF/paginas/usuario/actualizar.jsp"/>	
+	</definition>
 	
-	<definition name="d_portafolio" extends="d_plantilla">
+	<definition name="d_portafolio_listar" extends="d_plantilla">
 		<put-attribute name="contenido" value="/WEB-INF/paginas/portafolio/listar.jsp"/>	
 	</definition>
-	
-	<definition name="d_proyecto" extends="d_plantilla">
+
+	<definition name="d_portafolio_registrar" extends="d_plantilla">
+		<put-attribute name="contenido" value="/WEB-INF/paginas/portafolio/registrar.jsp"/>	
+	</definition>
+
+	<definition name="d_portafolio_actualizar" extends="d_plantilla">
+		<put-attribute name="contenido" value="/WEB-INF/paginas/portafolio/actualizar.jsp"/>	
+	</definition>
+
+	<definition name="d_proyecto_listar" extends="d_plantilla">
 		<put-attribute name="contenido" value="/WEB-INF/paginas/proyecto/listar.jsp"/>	
 	</definition>
+
+	<definition name="d_proyecto_registrar" extends="d_plantilla">
+		<put-attribute name="contenido" value="/WEB-INF/paginas/proyecto/registrar.jsp"/>	
+	</definition>
+
+	<definition name="d_proyecto_actualizar" extends="d_plantilla">
+		<put-attribute name="contenido" value="/WEB-INF/paginas/proyecto/actualizar.jsp"/>	
+	</definition>
 	
-	<definition name="d_tarea" extends="d_plantilla">
+	<definition name="d_tarea_listar" extends="d_plantilla">
 		<put-attribute name="contenido" value="/WEB-INF/paginas/tarea/listar.jsp"/>	
 	</definition>
-	
-	<definition name="d_documento" extends="d_plantilla">
-		<put-attribute name="contenido" value="/WEB-INF/paginas/documento/listar.jsp"/>	
+
+	<definition name="d_tarea_registrar" extends="d_plantilla">
+		<put-attribute name="contenido" value="/WEB-INF/paginas/tarea/registrar.jsp"/>	
+	</definition>
+
+	<definition name="d_tarea_actualizar" extends="d_plantilla">
+		<put-attribute name="contenido" value="/WEB-INF/paginas/tarea/actualizar.jsp"/>	
 	</definition>
 	
-	<definition name="d_integrante" extends="d_plantilla">
+	<definition name="d_documento_listar" extends="d_plantilla">
+		<put-attribute name="contenido" value="/WEB-INF/paginas/documento/listar.jsp"/>	
+	</definition>
+
+	<definition name="d_documento_registrar" extends="d_plantilla">
+		<put-attribute name="contenido" value="/WEB-INF/paginas/documento/registrar.jsp"/>	
+	</definition>
+
+	<definition name="d_documento_actualizar" extends="d_plantilla">
+		<put-attribute name="contenido" value="/WEB-INF/paginas/documento/actualizar.jsp"/>	
+	</definition>
+	
+	<definition name="d_integrante_listar" extends="d_plantilla">
 		<put-attribute name="contenido" value="/WEB-INF/paginas/integrante/listar.jsp"/>	
+	</definition>
+
+	<definition name="d_integrante_registrar" extends="d_plantilla">
+		<put-attribute name="contenido" value="/WEB-INF/paginas/integrante/registrar.jsp"/>	
+	</definition>
+
+	<definition name="d_integrante_actualizar" extends="d_plantilla">
+		<put-attribute name="contenido" value="/WEB-INF/paginas/integrante/actualizar.jsp"/>	
 	</definition>
 	
 </tiles-definitions>

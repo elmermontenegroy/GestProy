@@ -10,7 +10,7 @@
 		<title><s:text name="parrafo.login"/></title>
 		<s:head />
 	</head>
-	<body>
+	<body class="login">
 		<!-- Configuraciones Previas de manejo de Idioma -->
 		<s:url id="idiomaEn" action="idioma">
 			<s:param name="request_locale">en</s:param>
@@ -49,7 +49,7 @@
 										src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120" alt="">
 								</div>
 							</div>
-							<s:form action="loginUsuario" namespace="/seguridad">
+							<s:form action="loginUsuario" namespace="/usuario">
 								<div class="row">
 									<div class="col-sm-12 col-md-10  col-md-offset-1 ">
 										<s:textfield cssClass="form-control" key='label.usuario'  name="usuario.usuario"/>

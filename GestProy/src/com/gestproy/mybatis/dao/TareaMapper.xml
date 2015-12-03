@@ -5,14 +5,14 @@
 
 	<insert id="registrarTarea" parameterType="TareaDTO" useGeneratedKeys="true" keyProperty="tareaId">
 		insert into tb_tarea (tareaId, proyectoId, descripcion, fechaInicio, fechaFin, estado)
-		values (#{tareaId}, #{proyectoId}, #{descripcion}, #{fechaInicio}, #{fechaFin}, #{estado})
+		values (#{tareaId}, #{proyecto.proyectoId}, #{descripcion}, #{fechaInicio}, #{fechaFin}, #{estado})
 		<selectKey order="AFTER" resultType="int" keyProperty="tareaId">
 			select LAST_INSERT_ID();
 		</selectKey>
 	</insert>
 
 	<update id="actualizarTarea" parameterType="TareaDTO">
-		update tb_tarea set proyectoId = #{proyectoId}, 
+		update tb_tarea set proyectoId = #{proyecto.proyectoId}, 
 		 				      descripcion = #{descripcion}, 
 		 				      fechaInicio = #{fechaInicio}, 
 		 				      fechaFin = #{fechaFin}, 
@@ -24,7 +24,7 @@
 		delete from tb_tarea where tareaId = #{tareaId}
 	</delete>
 
-	<select id="listarTareas" resultType="TareaDTO" parameterType="TareaDTO">
+	<select id="listarTareas" parameterType="TareaDTO" resultMap="rListar">
 		select tareaId,proyectoId,descripcion,fechaInicio,fechaFin,estado
 		from tb_tarea
 	</select>
@@ -34,5 +34,14 @@
 		from tb_tarea
 		where tareaId = #{tareaId}
 	</select>
-
+	
+	<!-- RESULTS MAPS -->
+	<resultMap id="rListar" type="TareaDTO" >
+        <result property="tareaId"                         	column="TareaId" />
+        <result property="proyecto.proyectoId"              column="ProyectoId" />
+        <result property="descripcion"                      column="Descripcion" />
+        <result property="fechaInicio"                      column="FechaInicio" />
+        <result property="fechaFin"                         column="FechaFin" />
+       	<result property="estado"                          	column="Estado" />
+    </resultMap>
 </mapper>

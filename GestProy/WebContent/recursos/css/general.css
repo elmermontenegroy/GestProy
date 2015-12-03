@@ -1,14 +1,14 @@
-body{
+body.login{
 	background-color: #222;
 	font-size: 12px;
 }
 
 /******** LOGIN **********/
-.panel-heading {
+body.login .panel-heading {
     padding: 5px 15px;
 }
 
-.profile-img {
+body.login .profile-img {
 	width: 96px;
 	height: 96px;
 	margin: 0 auto 10px;
@@ -17,12 +17,16 @@ body{
 	-webkit-border-radius: 50%;
 	border-radius: 50%;
 }
-.label{
+body.login .label{
     color: black;
     font-size: 1.2em;
     vertical-align: -webkit-baseline-middle;	
 }
 
-.wwFormTable td{
+body.login .wwFormTable td{
 	padding: 5px;
+}
+/************MANTENIMIENTO y REPORTES**************/
+#page-wrapper label {
+    color: black;
 }

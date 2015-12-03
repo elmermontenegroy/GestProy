@@ -11,91 +11,70 @@ import com.opensymphony.xwork2.Preparable;
 
 public class DocumentoAction extends ActionSupport implements Preparable {
 	
+private static final long serialVersionUID = 1470228705843594914L;
+	
+	//variables
 	private DocumentoDTO documento = new DocumentoDTO();
 	private List<DocumentoDTO> documentos;
 	DocumentoService servicioDocumento = new DocumentoService();
 	
+	//Implementaciones
 	@Override
 	public void prepare() throws Exception {
-		
-
 		setDocumentos(obtenerListaDeDocumentos());
-		
-		 System.out.println("Prepare Updating ...");  
-
-	  }
+	}
 	
-	
-	//Metodos
-		public String registrarDocumento(){
-			
-			servicioDocumento.registrarDocumento(getDocumento());
-			
-			
-			return SUCCESS;
-		}
-		
-		public String inicializarActualizar(){
-			System.out.println("codigo: "+this.documento.getDocumentoId());
-			for(DocumentoDTO c : documentos){
-				if(c.getDocumentoId() == this.documento.getDocumentoId()){
-					documento = c;
-				}
+	//Metodos de Mantenimiento
+	public String cargarRegistrar(){
+		return "";
+	}
+	public String cargarActualizar(){
+		System.out.println("codigo: "+this.documento.getDocumentoId());
+		for(DocumentoDTO c : documentos){
+			if(c.getDocumentoId() == this.documento.getDocumentoId()){
+				documento = c;
 			}
-			return SUCCESS;
 		}
-		
-		public String actualizarDocumento(){
-			
-			
-			servicioDocumento.actualizarDocumento(getDocumento());
-			
-			return SUCCESS;
-		}
-		
-		public String eliminarDocumento(){
-			
-			
-			servicioDocumento.eliminarDocumento(getDocumento().getDocumentoId());
-			
-				return SUCCESS;
-			
-			
-		}
-		
-		public String listarDocumentos(){
-			this.documentos = obtenerListaDeDocumentos();
-			return SUCCESS;
-		}
-		
-		private List<DocumentoDTO> obtenerListaDeDocumentos(){
-
-			List<DocumentoDTO> listDocumento;
-
-			listDocumento=servicioDocumento.listarDocumentos(getDocumento());
-			
-			return listDocumento;
-		
-
-			
+		return SUCCESS;
+	}
+	public String registrar(){
+		servicioDocumento.registrarDocumento(getDocumento());
+		return SUCCESS;
+	}
+	public String actualizar(){
+		servicioDocumento.actualizarDocumento(getDocumento());
+		return SUCCESS;
+	}
+	public String listar(){
+		this.documentos = obtenerListaDeDocumentos();
+		return SUCCESS;
+	}
+	public String eliminar(){
+		servicioDocumento.eliminarDocumento(getDocumento().getDocumentoId());
+		return SUCCESS;
+	}
+	private boolean validar(){
+		return true;
+	}
+	private List<DocumentoDTO> obtenerListaDeDocumentos(){
+		List<DocumentoDTO> listDocumento;
+		listDocumento=servicioDocumento.listarDocumentos(getDocumento());
+		return listDocumento;
+	}
+	//Metodos de Reporte
 	
-		
-		}
-		
-		public DocumentoDTO getDocumento() {
-			return documento;
-		}
-		public void setDocumento(DocumentoDTO documento) {
-			this.documento = documento;
-		}
-		public List<DocumentoDTO> getDocumentos() {
-			return documentos;
-		}
-		public void setDocumentos(List<DocumentoDTO> documentos) {
-			this.documentos = documentos;
-		}
-		
-
+	//Obtener y Establecer
+	public DocumentoDTO getDocumento() {
+		return documento;
+	}
+	public void setDocumento(DocumentoDTO documento) {
+		this.documento = documento;
+	}
+	public List<DocumentoDTO> getDocumentos() {
+		return documentos;
+	}
+	public void setDocumentos(List<DocumentoDTO> documentos) {
+		this.documentos = documentos;
+	}
 	
-
 }

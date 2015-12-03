@@ -5,7 +5,7 @@
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-	<package name="struts-seguridad" extends="demo" namespace="/seguridad">
+	<package name="struts-usuario" extends="demo" namespace="/usuario">
 	
 		<action name="loginUsuario" class="com.gestproy.actions.UsuarioAction"
 			method="login">
@@ -22,7 +22,9 @@
 			</result>
 		</action>
 		
-
+		<action name="inicializarUsuario" class="com.gestproy.actions.UsuarioAction">
+			<result type="tiles">d_usuario_listar</result>
+		</action>
 		
 	</package>
 </struts>

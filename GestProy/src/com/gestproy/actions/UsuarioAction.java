@@ -8,8 +8,9 @@ import org.apache.struts2.interceptor.SessionAware;
 import com.gestproy.beans.UsuarioDTO;
 import com.gestproy.util.Constantes;
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.Preparable;
 
-public class UsuarioAction extends ActionSupport implements SessionAware{
+public class UsuarioAction extends ActionSupport implements SessionAware, Preparable{
 	
 	private static final long serialVersionUID = 1470228705843594914L;
 	
@@ -23,7 +24,12 @@ public class UsuarioAction extends ActionSupport implements SessionAware{
 		this.session = (SessionMap<String, Object>)session;
 	}
 	
-	//Metodos
+	@Override
+	public void prepare() throws Exception {
+		
+	}
+	
+	//Metodos de Sesiones
 	public String login() throws Exception{
 		String vista="";
 		//Llamar a los Servicios
@@ -52,6 +58,29 @@ public class UsuarioAction extends ActionSupport implements SessionAware{
         return LOGIN;
 	}
 	
+	//Metodos de Mantenimiento
+	public String cargarRegistrar(){
+		return "";
+	}
+	public String cargarActualizar(){
+		return "";
+	}
+	public String registrar(){
+		return "";
+	}
+	public String actualizar(){
+		return "";
+	}
+	public String listar(){
+		return "";
+	}
+	public String eliminar(){
+		return "";
+	}
+	private boolean validar(){
+		return true;
+	}
+	//Metodos de Reporte
 	//Obtener y Establecer
 	public void setUsuario(UsuarioDTO usuario) {
 		this.usuario = usuario;

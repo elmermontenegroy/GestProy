@@ -9,92 +9,70 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.Preparable;
 
 public class TareaAction extends ActionSupport implements Preparable {
- 
+	
+private static final long serialVersionUID = 1470228705843594914L;
+	
+	//variables
 	private TareaDTO tarea = new TareaDTO();
 	private List<TareaDTO> tareas;
 	TareaService servicioTarea = new TareaService();
 	
+	//Implementaciones
 	@Override
 	public void prepare() throws Exception {
-		
- 
-		setTareas(obtenerListaDeTareas());
-		
-		 System.out.println("Prepare Updating ...");  
-
-	 }
+		this.tareas=servicioTarea.listarTareas(getTarea());
+	}
 	
-	
-	//Metodos
-		public String registrarTarea(){
-			
-			servicioTarea.registrarTarea(getTarea());
-			
-			
-			return SUCCESS;
-		}
-		
-		public String inicializarActualizar(){
-			System.out.println("codigo: "+this.tarea.getTareaId());
-			for(TareaDTO c : tareas){
-				if(c.getTareaId() == this.tarea.getTareaId()){
-					  tarea = c;
-				}
+	//Metodos de Mantenimiento
+	public String cargarRegistrar(){
+		return SUCCESS;
+	}
+	public String cargarActualizar(){
+		System.out.println("codigo: "+this.tarea.getTareaId());
+		for(TareaDTO c : tareas){
+			if(c.getTareaId() == this.tarea.getTareaId()){
+				  tarea = c;
 			}
-			return SUCCESS;
 		}
-		
-		public String actualizarTarea(){
-			
-			
-			servicioTarea.actualizarTarea(getTarea());
-			
-			return SUCCESS;
-		}
-		
-		public String eliminarTarea(){
-			
-			
-			servicioTarea.eliminarTarea(getTarea().getTareaId());
-			
-				return SUCCESS;
-			
-			
-		}
-		
-		public String listarTareas(){
-			this.tareas = obtenerListaDeTareas();
-			return SUCCESS;
-		}
-		
-		private List<TareaDTO> obtenerListaDeTareas(){
-
-			List<TareaDTO> listTarea;
-
-			listTarea=servicioTarea.listarTareas(getTarea());
-			
-			return listTarea;
-		
-
-			
+		return SUCCESS;
+	}
+	public String registrar(){
+		servicioTarea.registrarTarea(getTarea());
+		this.tareas=servicioTarea.listarTareas(getTarea());
+		return SUCCESS;
+	}
+	public String actualizar(){
+		servicioTarea.actualizarTarea(getTarea());
+		this.tareas=servicioTarea.listarTareas(getTarea());
+		return SUCCESS;
+	}
+	public String listar(){
+		this.tareas=servicioTarea.listarTareas(getTarea());
+		return SUCCESS;
+	}
+	public String eliminar(){
+		servicioTarea.eliminarTarea(getTarea().getTareaId());
+		this.tareas=servicioTarea.listarTareas(getTarea());
+		return SUCCESS;
+	}
+	private boolean validar(){
+		return true;
+	}
 	
-		
-		}
-		
-		public TareaDTO getTarea() {
-			return tarea;
-		}
-		public void setTarea(TareaDTO tarea) {
-			this.tarea = tarea;
-		}
-		public List<TareaDTO> getTareas() {
-			return tareas;
-		}
-		public void setTareas(List<TareaDTO> tareas) {
-			this.tareas = tareas;
-		}
-		
-
+	//Metodos de Reporte
 	
-
+	//Obtener y Establecer
+	public TareaDTO getTarea() {
+		return tarea;
+	}
+	public void setTarea(TareaDTO tarea) {
+		this.tarea = tarea;
+	}
+	public List<TareaDTO> getTareas() {
+		return tareas;
+	}
+	public void setTareas(List<TareaDTO> tareas) {
+		this.tareas = tareas;
+	}
+	
 }

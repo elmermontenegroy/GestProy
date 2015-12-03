@@ -13,7 +13,37 @@
 	    
 	    <div class="row">
 	        <div class="col-md-12">
-	            Buscar por: 
+	            <s:if test="!documentos.isEmpty">
+					<table border=1>
+						<tr>
+							<td bgcolor="gray">DocumentoId</td>
+							<td bgcolor="gray">ProyectoId</td>
+							<td bgcolor="gray">Nombre</td>
+							<td bgcolor="gray">Fecha Inicio</td>
+							<td bgcolor="gray">Actualizar</td>
+							<td bgcolor="gray">Eliminar</td>
+						</tr>
+						<s:iterator value="documentos" var="doc" >
+							<tr>
+							    <td><s:property value="#doc.documentoId"/></td>
+								<td><s:property value="#doc.proyectoId"/></td>
+								<td><s:property value="#doc.nombre"/></td>
+								<td><s:property value="#doc.fechaInicio"/></td>
+								<td>
+									<a href="<s:url action="InicializarActualizarDocumentoAction">
+										<s:param name="documento.documentoId" value="#doc.documentoId"/>
+									</s:url>">Actualizar</a>
+								</td>
+								<td>
+									<a href="<s:url action="EliminarDocumentoAction">
+										<s:param name="documento.documentoId" value="#doc.documentoId"/>
+									</s:url>">Eliminar</a>
+								</td>
+							</tr>	
+						</s:iterator>
+					</table>
+				</s:if>
+				<a href="InicializarDocumentoAction">Registrar Documento</a>
 	        </div>
 	    </div>
 	    
