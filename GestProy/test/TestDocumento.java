@@ -5,6 +5,7 @@ import java.util.List;
 import org.junit.Test;
 
 import com.gestproy.beans.DocumentoDTO;
+import com.gestproy.beans.ProyectoDTO;
 import com.gestproy.service.DocumentoService;
 
 
@@ -23,15 +24,13 @@ public class TestDocumento {
 	public void Registrar(){
 		
 		DocumentoDTO documento = new DocumentoDTO();
-		
-		
+		documento.setProyecto(new ProyectoDTO());
 		documento.setDocumentoId(4);
 		documento.setNombre("documento4");
-		documento.setProyectoId(1);
+		documento.getProyecto().setProyectoId(1);
 		documento.setFechaInicio("2015-11-11");
 		
-		
-	   servDocumento.registrarDocumento(documento);
+	    servDocumento.registrarDocumento(documento);
 	
 	}
 	 
@@ -39,9 +38,9 @@ public class TestDocumento {
     public void Actualizar(){
     	
     	DocumentoDTO documento = new DocumentoDTO();
-    	
+    	documento.setProyecto(new ProyectoDTO());
     	documento.setDocumentoId(4);
-    	documento.setProyectoId(1);
+    	documento.getProyecto().setProyectoId(1);
     	documento.setNombre("Tareita4");
     	documento.setFechaInicio("2016-12-12");
     	

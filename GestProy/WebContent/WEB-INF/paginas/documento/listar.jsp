@@ -30,12 +30,12 @@
 								<td><s:property value="#doc.nombre"/></td>
 								<td><s:property value="#doc.fechaInicio"/></td>
 								<td>
-									<a href="<s:url action="InicializarActualizarDocumentoAction">
+									<a href="<s:url action="cargarActualizarDocumento" namespace="/tarea">
 										<s:param name="documento.documentoId" value="#doc.documentoId"/>
 									</s:url>">Actualizar</a>
 								</td>
 								<td>
-									<a href="<s:url action="EliminarDocumentoAction">
+									<a href="<s:url action="eliminarDocumento" namespace="/tarea">
 										<s:param name="documento.documentoId" value="#doc.documentoId"/>
 									</s:url>">Eliminar</a>
 								</td>
@@ -43,10 +43,9 @@
 						</s:iterator>
 					</table>
 				</s:if>
-				<a href="InicializarDocumentoAction">Registrar Documento</a>
+				<a href="<s:url action="cargarRegistrarDocumento" namespace="/documento"/>">Registrar Documento</a>
 	        </div>
 	    </div>
-	    
 	</div>
 </div>
 

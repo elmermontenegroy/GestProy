@@ -14,7 +14,7 @@
 	    <div class="row">
 	        <div class="col-md-12">
  
-				<s:form action="actualizarTarea">
+				<s:form action="actualizarTarea" namespace="/tarea">
 				
 					<s:textfield name="tarea.tareaId" label="Tarea Id" readonly="true"/>
 					<s:textfield name="tarea.proyecto.proyectoId" label="Proyecto Id"/>
@@ -25,7 +25,7 @@
 					
 					<s:submit value="Actualizar"/>
 				</s:form>
-				<p><a href="RefrescarActualizarTareaAction">Salir de la vista Actualizar</a></p>
+				<a href="<s:url action="inicializarTarea" namespace="/tarea"/>">Cancelar</a>
 	        </div>
 	    </div>
 	</div>

@@ -6,14 +6,14 @@
  
 	<insert id="registrarDocumento" parameterType="DocumentoDTO" useGeneratedKeys="true" keyProperty="documentoId">
 		insert into tb_documento (documentoId, proyectoId, nombre, fechaInicio)
-		values (#{documentoId}, #{proyectoId}, #{nombre}, #{fechaInicio})
+		values (#{documentoId}, #{proyecto.proyectoId}, #{nombre}, #{fechaInicio})
 		<selectKey order="AFTER" resultType="int" keyProperty="documentoId">
 			select LAST_INSERT_ID();
 		</selectKey>
 	</insert>
 
 	<update id="actualizarDocumento" parameterType="DocumentoDTO">
-		update tb_documento set proyectoId = #{proyectoId}, 
+		update tb_documento set proyectoId = #{proyecto.proyectoId}, 
 		 				      nombre = #{nombre}, 
 		 				      fechaInicio = #{fechaInicio}
 		where documentoId = #{documentoId}
@@ -23,7 +23,7 @@
 		delete from tb_documento where documentoId = #{documentoId}
 	</delete>
 
-	<select id="listarDocumentos" resultType="DocumentoDTO" parameterType="DocumentoDTO">
+	<select id="listarDocumentos" parameterType="DocumentoDTO" resultMap="rListar">
 		select documentoId,proyectoId,nombre,fechaInicio from tb_documento
 	</select>
 
@@ -32,6 +32,12 @@
 		where documentoId = #{documentoId}
 	</select>
 
-
+	<!-- RESULTS MAPS -->
+	<resultMap id="rListar" type="TareaDTO" >
+        <result property="documentoId"                         	column="DocumentoId" />
+        <result property="proyecto.proyectoId"              	column="ProyectoId" />
+       <result property="nombre"                      			column="Nombre" />
+        <result property="fechaInicio"                      	column="FechaInicio" />
+    </resultMap>
 
 </mapper>

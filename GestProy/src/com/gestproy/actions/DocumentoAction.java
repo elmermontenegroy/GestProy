@@ -21,12 +21,12 @@ private static final long serialVersionUID = 1470228705843594914L;
 	//Implementaciones
 	@Override
 	public void prepare() throws Exception {
-		setDocumentos(obtenerListaDeDocumentos());
+		this.documentos = servicioDocumento.listarDocumentos(getDocumento());
 	}
 	
 	//Metodos de Mantenimiento
 	public String cargarRegistrar(){
-		return "";
+		return SUCCESS;
 	}
 	public String cargarActualizar(){
 		System.out.println("codigo: "+this.documento.getDocumentoId());
@@ -39,28 +39,27 @@ private static final long serialVersionUID = 1470228705843594914L;
 	}
 	public String registrar(){
 		servicioDocumento.registrarDocumento(getDocumento());
+		this.documentos = servicioDocumento.listarDocumentos(getDocumento());
 		return SUCCESS;
 	}
 	public String actualizar(){
 		servicioDocumento.actualizarDocumento(getDocumento());
+		this.documentos = servicioDocumento.listarDocumentos(getDocumento());
 		return SUCCESS;
 	}
 	public String listar(){
-		this.documentos = obtenerListaDeDocumentos();
+		this.documentos = servicioDocumento.listarDocumentos(getDocumento());
 		return SUCCESS;
 	}
 	public String eliminar(){
 		servicioDocumento.eliminarDocumento(getDocumento().getDocumentoId());
+		this.documentos = servicioDocumento.listarDocumentos(getDocumento());
 		return SUCCESS;
 	}
 	private boolean validar(){
 		return true;
 	}
-	private List<DocumentoDTO> obtenerListaDeDocumentos(){
-		List<DocumentoDTO> listDocumento;
-		listDocumento=servicioDocumento.listarDocumentos(getDocumento());
-		return listDocumento;
-	}
+	
 	//Metodos de Reporte
 	
 	//Obtener y Establecer

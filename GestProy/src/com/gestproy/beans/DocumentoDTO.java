@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class DocumentoDTO {
 	//Variables
-	private int proyectoId;
+	private ProyectoDTO proyecto;
 	private int documentoId;
 	private String nombre;
 	private String fechaInicio; 
@@ -14,25 +14,26 @@ public class DocumentoDTO {
 		super();
 	}
 
-	public DocumentoDTO(int proyectoId, int documentoId, String nombre, String fechaInicio) {
+	public DocumentoDTO(ProyectoDTO proyecto, int documentoId, String nombre, String fechaInicio) {
 		super();
-		this.proyectoId = proyectoId;
+		this.proyecto = proyecto;
 		this.documentoId = documentoId;
 		this.nombre = nombre;
 		this.fechaInicio = fechaInicio;
 	}
 
 	//Obtener y Establecer
-	public int getProyectoId() {
-		return proyectoId;
-	}
-
-	public void setProyectoId(int proyectoId) {
-		this.proyectoId = proyectoId;
-	}
 
 	public int getDocumentoId() {
 		return documentoId;
+	}
+
+	public ProyectoDTO getProyecto() {
+		return proyecto;
+	}
+
+	public void setProyecto(ProyectoDTO proyecto) {
+		this.proyecto = proyecto;
 	}
 
 	public void setDocumentoId(int documentoId) {

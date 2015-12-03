@@ -10,6 +10,26 @@
 		<action name="inicializarDocumento" class="com.gestproy.actions.DocumentoAction">
 			<result type="tiles">d_documento_listar</result>
 		</action>
+			
+		<action name="cargarRegistrarDocumento" class="com.gestproy.actions.DocumentoAction" method="cargarRegistrar">
+			<result type="tiles">d_documento_registrar</result>
+		</action>
+		
+		<action name="registrarDocumento" class="com.gestproy.actions.DocumentoAction" method="registrar">
+			<result type="tiles">d_documento_listar</result>
+		</action>
+		
+		<action name="cargarActualizarDocumento" class="com.gestproy.actions.DocumentoAction" method="cargarActualizar">
+			<result type="tiles">d_documento_actualizar</result>
+		</action>
+		
+		<action name="actualizarDocumento" class="com.gestproy.actions.DocumentoAction" method="actualizar">
+			<result type="tiles">d_documento_listar</result>
+		</action>
+		
+		<action name="eliminarDocumento" class="com.gestproy.actions.DocumentoAction" method="eliminar">
+			<result type="tiles">d_documento_listar</result>
+		</action>
 		
 	</package>
 </struts>
