@@ -14,13 +14,13 @@ public class TestDocumento {
 	
    DocumentoService servDocumento = new DocumentoService();
    
-    @Test 
+    //@Test 
 	public void Eliminar(){
 		
 		servDocumento.eliminarDocumento(4);
 		
 	}
-    @Test
+    //@Test
 	public void Registrar(){
 		
 		DocumentoDTO documento = new DocumentoDTO();
@@ -34,7 +34,7 @@ public class TestDocumento {
 	
 	}
 	 
-    @Test
+    //@Test
     public void Actualizar(){
     	
     	DocumentoDTO documento = new DocumentoDTO();

@@ -17,7 +17,7 @@
 				<s:form action="registrarDocumento" namespace="/documento">
 				
 					<s:textfield name="documento.documentoId" label="Documento Id"/>
-					<s:textfield name="documento.proyectoId" label="Proyecto Id"/>
+					<s:textfield name="documento.proyecto.proyectoId" label="Proyecto Id"/>
 					<s:textfield name="documento.nombre" label="Nombre"/>
 					<s:textfield name="documento.fechaInicio" label="Fecha Inicio"/>
 					

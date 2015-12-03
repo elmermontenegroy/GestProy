@@ -33,7 +33,7 @@
 	</select>
 
 	<!-- RESULTS MAPS -->
-	<resultMap id="rListar" type="TareaDTO" >
+	<resultMap id="rListar" type="DocumentoDTO" >
         <result property="documentoId"                         	column="DocumentoId" />
         <result property="proyecto.proyectoId"              	column="ProyectoId" />
        <result property="nombre"                      			column="Nombre" />

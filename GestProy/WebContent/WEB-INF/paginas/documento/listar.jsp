@@ -30,12 +30,12 @@
 								<td><s:property value="#doc.nombre"/></td>
 								<td><s:property value="#doc.fechaInicio"/></td>
 								<td>
-									<a href="<s:url action="cargarActualizarDocumento" namespace="/tarea">
+									<a href="<s:url action="cargarActualizarDocumento" namespace="/documento">
 										<s:param name="documento.documentoId" value="#doc.documentoId"/>
 									</s:url>">Actualizar</a>
 								</td>
 								<td>
-									<a href="<s:url action="eliminarDocumento" namespace="/tarea">
+									<a href="<s:url action="eliminarDocumento" namespace="/documento">
 										<s:param name="documento.documentoId" value="#doc.documentoId"/>
 									</s:url>">Eliminar</a>
 								</td>
