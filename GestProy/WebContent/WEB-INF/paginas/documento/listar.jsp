@@ -26,7 +26,7 @@
 						<s:iterator value="documentos" var="doc" >
 							<tr>
 							    <td><s:property value="#doc.documentoId"/></td>
-								<td><s:property value="#doc.proyectoId"/></td>
+								<td><s:property value="#doc.proyecto.proyectoId"/></td>
 								<td><s:property value="#doc.nombre"/></td>
 								<td><s:property value="#doc.fechaInicio"/></td>
 								<td>
