@@ -7,9 +7,9 @@ public class TareaDTO {
 	private int proyectoId;
 	private int tareaId;
 	private String descripcion;
-	private String fechaInicio;
+	private String fechaInicio; 
 	private String fechaFin;
-	private Character estado;
+	private Character estado; 
 	
 	//Constructors
 	public TareaDTO() {

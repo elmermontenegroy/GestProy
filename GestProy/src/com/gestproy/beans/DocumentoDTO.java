@@ -7,7 +7,7 @@ public class DocumentoDTO {
 	private int proyectoId;
 	private int documentoId;
 	private String nombre;
-	private String fechaInicio;
+	private String fechaInicio; 
 	
 	//Constructors
 	public DocumentoDTO() {
