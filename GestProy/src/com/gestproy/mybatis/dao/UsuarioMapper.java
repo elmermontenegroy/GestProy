@@ -14,7 +14,7 @@ public interface UsuarioMapper {
 
 	public void registrarUsuario(UsuarioDTO usuario);
 	public void actualizarUsuario(UsuarioDTO usuario);
-	public void eliminarUsuario(int codigo);
+	public void eliminarUsuarios(String codigos);
 	public List<UsuarioDTO>listarUsuarios(UsuarioDTO usuario);
 	public UsuarioDTO obtenerUsuario(int codigo);
 	

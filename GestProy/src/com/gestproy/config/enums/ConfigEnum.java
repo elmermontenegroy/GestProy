@@ -5,8 +5,13 @@ package com.gestproy.config.enums;
  *
  */
 public enum ConfigEnum {
-
-	MYBATIS_CONFIG_FILE("com/gestproy/mybatis/config/mybatis-config.xml");
+	
+	//MyBatis
+	MYBATIS_CONFIG_FILE("com/gestproy/mybatis/config/mybatis-config.xml"),
+	
+	//Estados
+	ESTADO_ACTIVO("Activo"),
+	ESTADO_INACTIVO("Inactivo");
 	
 	private String parametro;
 	

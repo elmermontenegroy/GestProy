@@ -17,13 +17,13 @@
 	
 	    <!-- Custom CSS -->
 	    <link href="<s:url value='/recursos/css/sbadmin.css'/>" rel="stylesheet" type="text/css">
-	
-	    <!-- Morris Charts CSS -->
-	    <link href="<s:url value='/recursos/css/morris.css'/>" rel="stylesheet" type="text/css">
+
+		<!-- Jquery DataTable -->
+		<link href="<s:url value='/recursos/css/jquery.dataTables.css'/>" rel="stylesheet" type="text/css">
 	
 	    <!-- Custom Fonts -->
 	    <link href="<s:url value='/recursos/font/font-awesome/css/font-awesome.min.css'/>" rel="stylesheet" type="text/css">
-
+		
 	    <!-- Nuestro Propio CSS-->
 	    <link href="<s:url value='/recursos/css/general.css'/>" rel="stylesheet" type="text/css">
 	   
@@ -66,13 +66,18 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="<s:url value='/recursos/js/bootstrap.min.js'/>"></script>
 
-    <!-- Morris Charts JavaScript -->
+    <!-- Morris Charts JavaScript 
     <script src="<s:url value='/recursos/js/plugins/morris/raphael.min.js'/>"></script>
     <script src="<s:url value='/recursos/js/plugins/morris/morris.min.js'/>"></script>
     <script src="<s:url value='/recursos/js/plugins/morris/morris-data.js'/>"></script>
+    -->
+    
+    <!-- Jquery DataTable -->
+	<script src="<s:url value='/recursos/js/jquery.dataTables.js'/>"></script>
+    
     
     <!-- SB Admin -->
-    <script src="<s:url value='/recursos/js/jquery.js'/>../resources/js/general.js"></script>
+    <script src="<s:url value='/recursos/js/general.js'/>"></script>
     
     <!-- Para agregar nuestros propios javascript en la pagina hija-->
 

@@ -27,8 +27,8 @@
 		where usuarioId = #{usuarioId}
 	</update>
 
-	<delete id="eliminarUsuario" parameterType="int">
-		delete from tb_usuario where usuarioId = #{UsuarioId}
+	<delete id="eliminarUsuarios" parameterType="String">
+		{ call sp_usuario_eliminar(#{codigos, jdbcType=VARCHAR})}
 	</delete>
 
 	<select id="listarUsuarios" parameterType="UsuarioDTO" resultMap="rListar" statementType="CALLABLE">
@@ -59,6 +59,7 @@
        	<result property="apellido"                          	column="Apellido" />
         <result property="fechaNacimiento"              		column="FechaNacimiento" />
         <result property="tipoUsuario.tipoUsuarioId"            column="TipoUsuarioId" />
+        <result property="tipoUsuario.descripcion"              column="Descripcion" />
         <result property="estado"             					column="Estado" />
     </resultMap> 
 </mapper>

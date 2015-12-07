@@ -39,10 +39,10 @@ public class UsuarioService {
 		sesion.close();
 	}
 	
-	public void eliminarUsuario(int codigo) {
+	public void eliminarUsuarios(String codigos) {
 		//Acceder al mapper
 		SqlSession sesion = this.obtenerSesion();
-		sesion.getMapper(UsuarioMapper.class).eliminarUsuario(codigo);
+		sesion.getMapper(UsuarioMapper.class).eliminarUsuarios(codigos);
 		//Me aseguro que el registro fue eliminado
 		sesion.commit();
 		//Cierro la sesión

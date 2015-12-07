@@ -40,12 +40,12 @@ public class UsuarioTest {
 		fail("Not yet implemented");
 	}
 
-	//@Test
+	@Test
 	public void testEliminarUsuario() {
-		fail("Not yet implemented");
+		servicioUsuario.eliminarUsuarios("9");
 	}
 
-	@Test
+	//@Test
 	public void testListarUsuarios() {
 		List<UsuarioDTO> listUsuarios;
 		UsuarioDTO usuario = new UsuarioDTO();

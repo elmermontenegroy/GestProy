@@ -7,15 +7,13 @@
 <struts>
 	<package name="struts-usuario" extends="demo" namespace="/usuario">
 	
-		<action name="loginUsuario" class="com.gestproy.actions.UsuarioAction"
-			method="login">
+		<action name="loginUsuario" class="com.gestproy.actions.UsuarioAction" method="login">
 			<result type="tiles">d_principal</result>
 			<result name="login">/WEB-INF/paginas/login.jsp</result>
 			<result name="input">/WEB-INF/paginas/login.jsp</result>
 		</action>
 
-		<action name="logoutUsuario" class="com.gestproy.actions.UsuarioAction"
-			method="logout">
+		<action name="logoutUsuario" class="com.gestproy.actions.UsuarioAction" method="logout">
 			<result name="login" type="redirectAction">
 				<param name="actionName">inicio</param>				
 				<param name="namespace">/</param>
@@ -23,6 +21,18 @@
 		</action>
 		
 		<action name="inicializarUsuario" class="com.gestproy.actions.UsuarioAction">
+			<result type="tiles">d_usuario_listar</result>
+		</action>
+		
+		<action name="buscarUsuario" class="com.gestproy.actions.UsuarioAction" method="buscar">
+			<result type="tiles">d_usuario_listar</result>
+		</action>
+		
+		<action name="cargarRegistrarUsuario" class="com.gestproy.actions.UsuarioAction" method="cargarRegistrar">
+			<result type="tiles">d_usuario_registrar</result>
+		</action>
+		
+		<action name="eliminarUsuario" class="com.gestproy.actions.UsuarioAction" method="eliminar">
 			<result type="tiles">d_usuario_listar</result>
 		</action>
 		

@@ -1,5 +1,7 @@
 package com.gestproy.beans;
 
+import com.gestproy.config.enums.ConfigEnum;
+
 public class UsuarioDTO {
 	//Variables
 	private int usuarioId;
@@ -32,6 +34,13 @@ public class UsuarioDTO {
 	}
 
 	//Obtener y Establecer
+	public String getEstadoToString(){
+		if(estado!=null && estado=='A'){
+			return ConfigEnum.ESTADO_ACTIVO.getParametro();
+		}
+		return ConfigEnum.ESTADO_INACTIVO.getParametro();
+	}
+	
 	public int getUsuarioId() {
 		return usuarioId;
 	}

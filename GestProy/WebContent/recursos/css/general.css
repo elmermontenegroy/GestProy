@@ -27,6 +27,18 @@ body.login .wwFormTable td{
 	padding: 5px;
 }
 /************MANTENIMIENTO y REPORTES**************/
+#page-wrapper{
+	height: calc(100vh - 50px);
+}
+
 #page-wrapper label {
     color: black;
 }
+.base .cboBusqueda{
+	width: 30%;
+}
+.base .txtBusqueda{
+	margin-left: 10px;
+}
+
+
