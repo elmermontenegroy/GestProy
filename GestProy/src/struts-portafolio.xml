@@ -11,5 +11,27 @@
 			<result type="tiles">d_portafolio_listar</result>
 		</action>
 		
+		<action name="cargarRegistrarPortafolio" class="com.gestproy.actions.PortafolioAction" method="cargarRegistrar">
+			<result type="tiles">d_portafolio_registrar</result>
+		</action>
+		
+		<action name="registrarPortafolio" class="com.gestproy.actions.PortafolioAction" method="registrar">
+			<result type="tiles">d_portafolio_listar</result>
+		</action>
+		
+		<action name="cargarActualizarPortafolio" class="com.gestproy.actions.PortafolioAction" method="cargarActualizar">
+			<result type="tiles">d_portafolio_actualizar</result>
+		</action>
+		
+		<action name="actualizarPortafolio" class="com.gestproy.actions.PortafolioAction" method="actualizar">
+			<result type="tiles">d_portafolio_listar</result>
+		</action>
+		
+		<action name="eliminarPortafolio" class="com.gestproy.actions.PortafolioAction" method="eliminar">
+			<result type="tiles">d_portafolio_listar</result>
+		</action>
+		
+		
+		
 	</package>
 </struts>

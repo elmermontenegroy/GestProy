@@ -3,6 +3,43 @@
 
 <mapper namespace="com.gestproy.mybatis.dao.PortafolioMapper">
 
+	<insert id="registrarPortafolio" parameterType="PortafolioDTO" useGeneratedKeys="true" keyProperty="portafolioId">
+		insert into tb_portafolio (portafolioId, descripcion, estado)
+		values (#{portafolioId}, #{descripcion}, #{estado})
+		<selectKey order="AFTER" resultType="int" keyProperty="portafolioId">
+			select LAST_INSERT_ID();
+		</selectKey>
+	</insert>
+	
+	
+	<update id="actualizarPortafolio" parameterType="PortafolioDTO">
+		update tb_portafolio set descripcion = #{descripcion}, 
+		 				         estado = #{estado}
+		where portafolioId = #{portafolioId}
+	</update>
+	
+	
+	<delete id="eliminarPortafolio" parameterType="int">
+		delete from tb_portafolio where portafolioId = #{portafolioId}
+	</delete>
+	
+	
+	<select id="listarPortafolios" parameterType="PortafolioDTO" resultMap="rListar">
+		select portafolioId,descripcion,estado from tb_portafolio
+	</select>
+
+	<select id="obtenerPortafolio" resultType="PortafolioDTO" parameterType="PortafolioDTO">
+		select portafolioId,descripcion,estado from tb_portafolio
+		where portafolioId = #{portafolioId}
+	</select>
+	
+	
+	<!-- RESULTS MAPS -->
+	<resultMap id="rListar" type="PortafolioDTO" >
+        <result property="portafolioId"                         	column="portafolioId" />
+       <result property="descripcion"                      			column="descripcion" />
+        <result property="estado"                      				column="estado" />
+    </resultMap>
 
 
 </mapper>

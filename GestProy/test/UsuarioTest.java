@@ -41,9 +41,9 @@ public class UsuarioTest {
 	}
 
 	@Test
-	public void testEliminarUsuario() {
+/*	public void testEliminarUsuario() {
 		servicioUsuario.eliminarUsuarios("9");
-	}
+	}*/
 
 	//@Test
 	public void testListarUsuarios() {

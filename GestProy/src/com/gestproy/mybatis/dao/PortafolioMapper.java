@@ -15,7 +15,7 @@ public interface PortafolioMapper {
 	public int registrarPortafolio(PortafolioDTO portafolio);
 	public void actualizarPortafolio(PortafolioDTO portafolio);
 	public void eliminarPortafolio(int codigo);
-	public List<PortafolioDTO>listarPortafolios();
+	public List<PortafolioDTO> listarPortafolios(PortafolioDTO portafolio);
 	public PortafolioDTO obtenerPortafolio(int codigo);
 	
 }

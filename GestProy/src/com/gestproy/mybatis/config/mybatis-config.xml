@@ -24,7 +24,7 @@
 			<transactionManager type="JDBC" /><!-- JDBC/Manual -->
 			<dataSource type="POOLED">
 				<property name="driver" value="com.mysql.jdbc.Driver"/>
-				<property name="url" value="jdbc:mysql://localhost/gestproybd"/>
+				<property name="url" value="jdbc:mysql://localhost/GestProyBD"/>
 				<property name="username" value="root"/>
 				<property name="password" value="mysql"/>
 			</dataSource>
