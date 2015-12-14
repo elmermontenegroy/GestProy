@@ -6,8 +6,10 @@ import java.util.Map;
 import org.apache.struts2.dispatcher.SessionMap;
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.gestproy.beans.TipoUsuarioDTO;
 import com.gestproy.beans.UsuarioDTO;
 import com.gestproy.service.DocumentoService;
+import com.gestproy.service.TipoUsuarioService;
 import com.gestproy.service.UsuarioService;
 import com.gestproy.util.Constantes;
 import com.opensymphony.xwork2.ActionSupport;
@@ -24,9 +26,11 @@ public class UsuarioAction extends ActionSupport implements SessionAware, Prepar
 	private UsuarioDTO usuario;
 	private SessionMap<String, Object> session;
 	private List<UsuarioDTO> usuarios;
+	private List<TipoUsuarioDTO> tipoUsuarios;
 	
 	//servicios
 	UsuarioService servicioUsuario = new UsuarioService();
+	TipoUsuarioService servicioTipoUsuario = new TipoUsuarioService();
 	
 		
 	//Implementaciones
@@ -38,6 +42,7 @@ public class UsuarioAction extends ActionSupport implements SessionAware, Prepar
 	@Override
 	public void prepare() throws Exception {
 		this.usuarios = servicioUsuario.listarUsuarios(new UsuarioDTO());
+		this.tipoUsuarios = servicioTipoUsuario.listarTipoUsuarios(new TipoUsuarioDTO());
 	}
 	
 	//Metodos de Sesiones
@@ -72,7 +77,11 @@ public class UsuarioAction extends ActionSupport implements SessionAware, Prepar
 	//Metodos de Mantenimiento
 
 	public String cargarRegistrar(){
-		return "";
+		usuario = new UsuarioDTO();
+		usuario.setTipoUsuario(new TipoUsuarioDTO());
+		usuario.getTipoUsuario().setTipoUsuarioId(1);
+		usuario.setEstado('A');
+		return SUCCESS;
 	}
 	
 	public String cargarActualizar(){
@@ -91,11 +100,16 @@ public class UsuarioAction extends ActionSupport implements SessionAware, Prepar
 	}
 	
 	public String registrar(){
-		return "";
+		servicioUsuario.registrarUsuario(usuario);
+		if(usuario.getUsuarioId()>0){
+			return SUCCESS;
+		}
+		return ERROR;
 	}
 	
 	public String actualizar(){
-		return "";
+		
+		return SUCCESS;
 	}
 	
 	public String eliminar(){
@@ -138,5 +152,11 @@ public class UsuarioAction extends ActionSupport implements SessionAware, Prepar
 	}
 	public void setTxtEliminar(String txtEliminar) {
 		this.txtEliminar = txtEliminar;
+	}
+	public List<TipoUsuarioDTO> getTipoUsuarios() {
+		return tipoUsuarios;
+	}
+	public void setTipoUsuarios(List<TipoUsuarioDTO> tipoUsuarios) {
+		this.tipoUsuarios = tipoUsuarios;
 	}
 }

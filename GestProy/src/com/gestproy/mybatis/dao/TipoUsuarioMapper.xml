@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="com.gestproy.mybatis.dao.TipoUsuarioMapper">
+
+	<select id="listarTipoUsuarios" parameterType="TipoUsuarioDTO" resultType="TipoUsuarioDTO">
+		select tipoUsuarioId, descripcion 
+		from tb_tipo_usuario	
+	</select>
+
+</mapper>

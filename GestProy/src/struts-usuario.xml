@@ -32,6 +32,18 @@
 			<result type="tiles">d_usuario_registrar</result>
 		</action>
 		
+		<action name="registrarUsuario" class="com.gestproy.actions.UsuarioAction" method="registrar">
+			<result type="tiles">d_usuario_listar</result>
+		</action>
+		
+		<action name="cargarActualizarUsuario" class="com.gestproy.actions.UsuarioAction" method="cargarActualizar">
+			<result type="tiles">d_usuario_actualizar</result>
+		</action>
+		
+		<action name="actualizarUsuario" class="com.gestproy.actions.UsuarioAction" method="actualizar">
+			<result type="tiles">d_usuario_listar</result>
+		</action>
+		
 		<action name="eliminarUsuario" class="com.gestproy.actions.UsuarioAction" method="eliminar">
 			<result type="tiles">d_usuario_listar</result>
 		</action>

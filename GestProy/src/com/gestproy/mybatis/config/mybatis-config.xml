@@ -5,16 +5,15 @@
 
 	<typeAliases>
 		 <!-- 
-
 		<typeAlias type="com.gestproy.beans.IntegranteDTO" alias="IntegranteDTO"/>
 		<typeAlias type="com.gestproy.beans.PortafolioDTO" alias="PortafolioDTO"/>
 		<typeAlias type="com.gestproy.beans.ProyectoDTO" alias="ProyectoDTO"/>
 		<typeAlias type="com.gestproy.beans.ProyectoUsuarioDTO" alias="ProyectoUsuarioDTO"/>
 		<typeAlias type="com.gestproy.beans.TareaDTO" alias="TareaDTO"/>
-		<typeAlias type="com.gestproy.beans.TipoUsuarioDTO" alias="TipoUsuarioDTO"/>
 		 -->
 		 
-		 <typeAlias type="com.gestproy.beans.DocumentoDTO" alias="DocumentoDTO"/>
+		<typeAlias type="com.gestproy.beans.TipoUsuarioDTO" alias="TipoUsuarioDTO"/> 
+		<typeAlias type="com.gestproy.beans.DocumentoDTO" alias="DocumentoDTO"/>
 		<typeAlias type="com.gestproy.beans.UsuarioDTO" alias="UsuarioDTO"/>
 		<typeAlias type="com.gestproy.beans.TareaDTO" alias="TareaDTO"/>
 	</typeAliases>
@@ -39,6 +38,7 @@
 		<mapper class="com.gestproy.mybatis.dao.MProyectoMapper"/>
 		<mapper class="com.gestproy.mybatis.dao.MTareaMapper"/>
 		 -->
+		<mapper class="com.gestproy.mybatis.dao.TipoUsuarioMapper"/>
 		<mapper class="com.gestproy.mybatis.dao.UsuarioMapper"/>
 		<mapper class="com.gestproy.mybatis.dao.TareaMapper"/>
 		<mapper class="com.gestproy.mybatis.dao.DocumentoMapper"/>
