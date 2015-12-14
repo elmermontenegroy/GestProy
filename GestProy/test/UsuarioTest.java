@@ -19,7 +19,7 @@ public class UsuarioTest {
 		servicioUsuario = new UsuarioService();
 	}
 	
-	@Test
+	//@Test
 	public void testRegistrarUsuario() {
 		UsuarioDTO usuario = new UsuarioDTO();
 		usuario.setTipoUsuario(new TipoUsuarioDTO());
@@ -35,9 +35,20 @@ public class UsuarioTest {
 		System.out.println("UsuarioId: "+usuario.getUsuarioId());
 	}
 
-	//@Test
+	@Test
 	public void testActualizarUsuario() {
-		fail("Not yet implemented");
+		UsuarioDTO usuario = new UsuarioDTO();
+		usuario.setTipoUsuario(new TipoUsuarioDTO());
+		usuario.setUsuarioId(12);
+		//usuario.setUsuario("tbutler");
+		//usuario.setClave("1234");
+		//usuario.setEmail("tbutler@gmail.com");
+		usuario.setNombre("Tiger4");
+		//usuario.setApellido("Butler Terreros");
+		//usuario.setFechaNacimiento("1992-06-03");
+		//usuario.getTipoUsuario().setTipoUsuarioId(7);
+		//usuario.setEstado('A');
+		servicioUsuario.actualizarUsuario(usuario);
 	}
 
 	//@Test

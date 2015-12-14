@@ -16,15 +16,15 @@
 	</insert>
 
 	<update id="actualizarUsuario" parameterType="UsuarioDTO">
-		update tb_usuario set usuario = #{usuario}, 
-		 				      clave = #{clave}, 
-		 				      email = #{email}, 
-		 				      nombre = #{nombre}, 
-		 				      apellido = #{apellido},
-		 				      fechaNacimiento = #{fechaNacimiento},
-		 				      tipoUsuario = #{tipoUsuario},
-		 				      estado = #{estado}
-		where usuarioId = #{usuarioId}
+		{ call sp_usuario_actualizar(#{usuarioId},
+									 #{nombre},
+									 #{apellido},
+									 #{usuario},
+									 #{clave},
+									 #{fechaNacimiento},
+									 #{email},
+									 #{estado},
+									 #{tipoUsuario.tipoUsuarioId})}
 	</update>
 
 	<delete id="eliminarUsuarios" parameterType="String">
@@ -43,9 +43,10 @@
                                  #{estado, jdbcType=VARCHAR}) }
 	</select>
 
-	<select id="obtenerUsuario" parameterType="UsuarioDTO" resultType="UsuarioDTO">
-		select usuarioId, usuario, clave, email, nombre, apellido, fechaNacimiento, tipoUsuario, estado 
-		from tb_usuario
+	<select id="obtenerUsuario" parameterType="UsuarioDTO" resultMap="rListar">
+		select u.usuarioId, u.usuario, u.clave, u.email, u.nombre, u.apellido, u.fechaNacimiento, tu.tipoUsuarioId, tu.descripcion, u.estado 
+		from tb_usuario u
+		inner join tb_tipo_usuario tu on u.tipoUsuarioId = tu.tipoUsuarioId
 		where usuarioId = #{usuarioId}
 	</select>
 	

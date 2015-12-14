@@ -49,7 +49,7 @@
 							<tr>
 								<td>
 									<a href="<s:url action="cargarActualizarUsuario" namespace="/usuario">
-										<s:param name="usuario.usuarioId" value="#usu.usuarioId"/>
+										<s:param name="usuario.usuarioId" value="#usu.usuarioId"/> 
 									</s:url>"><s:property value="#usu.nombre"/></a>
 								</td>
 							    <td><s:property value="#usu.apellido"/></td>

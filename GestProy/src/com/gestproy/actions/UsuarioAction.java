@@ -41,8 +41,8 @@ public class UsuarioAction extends ActionSupport implements SessionAware, Prepar
 	
 	@Override
 	public void prepare() throws Exception {
-		this.usuarios = servicioUsuario.listarUsuarios(new UsuarioDTO());
-		this.tipoUsuarios = servicioTipoUsuario.listarTipoUsuarios(new TipoUsuarioDTO());
+		usuarios = servicioUsuario.listarUsuarios(new UsuarioDTO());
+		tipoUsuarios = servicioTipoUsuario.listarTipoUsuarios(new TipoUsuarioDTO());
 	}
 	
 	//Metodos de Sesiones
@@ -85,7 +85,8 @@ public class UsuarioAction extends ActionSupport implements SessionAware, Prepar
 	}
 	
 	public String cargarActualizar(){
-		return "";
+		usuario = servicioUsuario.obtenerUsuario(usuario.getUsuarioId());
+		return SUCCESS;
 	}
 	
 	public String buscar(){
@@ -95,26 +96,28 @@ public class UsuarioAction extends ActionSupport implements SessionAware, Prepar
 			case "1":usuario.setNombre(txtBusqueda);break;
 			case "2":usuario.setApellido(txtBusqueda);break;
 		}
-		this.usuarios = servicioUsuario.listarUsuarios(usuario);
+		usuarios = servicioUsuario.listarUsuarios(usuario);
 		return SUCCESS;
 	}
 	
 	public String registrar(){
 		servicioUsuario.registrarUsuario(usuario);
 		if(usuario.getUsuarioId()>0){
+			usuarios = servicioUsuario.listarUsuarios(new UsuarioDTO());
 			return SUCCESS;
 		}
 		return ERROR;
 	}
 	
 	public String actualizar(){
-		
+		servicioUsuario.actualizarUsuario(usuario);
+		usuarios = servicioUsuario.listarUsuarios(new UsuarioDTO());
 		return SUCCESS;
 	}
 	
 	public String eliminar(){
 		servicioUsuario.eliminarUsuarios(txtEliminar);
-		this.usuarios = servicioUsuario.listarUsuarios(new UsuarioDTO());
+		usuarios = servicioUsuario.listarUsuarios(new UsuarioDTO());
 		return SUCCESS;
 	}
 	
