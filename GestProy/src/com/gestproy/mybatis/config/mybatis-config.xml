@@ -31,7 +31,7 @@
 
 	<mappers>
 		<!-- 
-		<mapper class="com.gestproy.mybatis.dao.MIntegranteMapper"/>
+		
 		<mapper class="com.gestproy.mybatis.dao.MTareaMapper"/>
 		 -->
 		<mapper class="com.gestproy.mybatis.dao.TipoUsuarioMapper"/>
@@ -39,6 +39,7 @@
 		<mapper class="com.gestproy.mybatis.dao.DocumentoMapper"/>
 		<mapper class="com.gestproy.mybatis.dao.ProyectoMapper"/>
 		<mapper class="com.gestproy.mybatis.dao.UsuarioMapper"/>
+		<mapper class="com.gestproy.mybatis.dao.IntegranteMapper"/>
 		<mapper class="com.gestproy.mybatis.dao.TareaMapper"/>
 	</mappers>
 

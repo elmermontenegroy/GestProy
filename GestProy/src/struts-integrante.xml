@@ -11,5 +11,29 @@
 			<result type="tiles">d_integrante_listar</result>
 		</action>
 		
+		<action name="buscarIntegrante" class="com.gestproy.actions.IntegranteAction" method="buscar">
+			<result type="tiles">d_integrante_listar</result>
+		</action>
+		
+		<action name="cargarRegistrarIntegrante" class="com.gestproy.actions.IntegranteAction" method="cargarRegistrar">
+			<result type="tiles">d_integrante_registrar</result>
+		</action>
+		
+		<action name="registrarIntegrante" class="com.gestproy.actions.IntegranteAction" method="registrar">
+			<result type="tiles">d_integrante_listar</result>
+		</action>
+		
+		<action name="cargarActualizarIntegrante" class="com.gestproy.actions.IntegranteAction" method="cargarActualizar">
+			<result type="tiles">d_usuario_integrante</result>
+		</action>
+		
+		<action name="actualizarIntegrante" class="com.gestproy.actions.IntegranteAction" method="actualizar">
+			<result type="tiles">d_integrante_listar</result>
+		</action>
+		
+		<action name="eliminarIntegrante" class="com.gestproy.actions.IntegranteAction" method="eliminar">
+			<result type="tiles">d_integrante_listar</result>
+		</action>
+		
 	</package>
 </struts>

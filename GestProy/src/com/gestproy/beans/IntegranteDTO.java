@@ -1,5 +1,7 @@
 package com.gestproy.beans;
 
+import com.gestproy.config.enums.ConfigEnum;
+
 public class IntegranteDTO {
 	//Variables
 	private ProyectoDTO proyectoId;
@@ -16,7 +18,7 @@ public class IntegranteDTO {
 		super();
 	}
 
-	public IntegranteDTO(ProyectoDTO proyectoId, int integranteId, String nombre, String apellido, String email,
+	public IntegranteDTO(int integranteId, String nombre, String apellido,ProyectoDTO proyectoId,  String email,
 			String fechaNacimiento, Character estado) {
 		super();
 		this.proyectoId = proyectoId;
@@ -29,12 +31,20 @@ public class IntegranteDTO {
 	}
 
 	//Obtener y Establecer
+	public String getEstadoToString(){
+		if(estado!=null && estado=='A'){
+			return ConfigEnum.ESTADO_ACTIVO.getParametro();
+		}
+		return ConfigEnum.ESTADO_INACTIVO.getParametro();
+	}
+	
 	public ProyectoDTO getProyectoId() {
 		return proyectoId;
 	}
 
 	public void setProyectoId(ProyectoDTO proyectoId) {
 		this.proyectoId = proyectoId;
+		
 	}
 
 	public int getIntegranteId() {
@@ -84,4 +94,12 @@ public class IntegranteDTO {
 	public void setEstado(Character estado) {
 		this.estado = estado;
 	}	
+	
+	//ToString
+		@Override
+		public String toString() {
+			return "UsuarioDTO [integranteId=" + integranteId + ", email=" + email
+					+ ", nombre=" + nombre + ", apellido=" + apellido + ", fechaNacimiento=" + fechaNacimiento
+					+ ", proyectoId=" + (proyectoId==null?"":proyectoId.getProyectoId()) + ", estado=" + estado + "]";
+		}
 }
