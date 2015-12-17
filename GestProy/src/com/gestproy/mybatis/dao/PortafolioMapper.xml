@@ -37,7 +37,7 @@
 	<!-- RESULTS MAPS -->
 	<resultMap id="rListar" type="PortafolioDTO" >
         <result property="portafolioId"                         	column="portafolioId" />
-       <result property="descripcion"                      			column="descripcion" />
+        <result property="descripcion"                      		column="descripcion" />
         <result property="estado"                      				column="estado" />
     </resultMap>
 

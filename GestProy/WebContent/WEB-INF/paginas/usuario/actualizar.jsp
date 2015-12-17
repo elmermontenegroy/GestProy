@@ -8,7 +8,7 @@
 				<div class="row">
 			        <div class="col-md-12">
 			            <h1 class="page-header">
-			                <s:text name="mu_titulo_listar"/>
+			                <s:text name="mu_titulo_actualizar"/>
 			            </h1>
 			        </div>
 			    </div>

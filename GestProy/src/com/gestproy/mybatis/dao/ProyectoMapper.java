@@ -14,8 +14,8 @@ public interface ProyectoMapper {
 
 	public int registrarProyecto(ProyectoDTO proyecto);
 	public void actualizarProyecto(ProyectoDTO proyecto);
-	public void eliminarProyecto(int codigo);
-	public List<ProyectoDTO>listarProyectos();
+	public void eliminarProyectos(String codigos);
+	public List<ProyectoDTO>listarProyectos(ProyectoDTO proyecto);
 	public ProyectoDTO obtenerProyecto(int codigo);
 	
 }

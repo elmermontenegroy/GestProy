@@ -11,5 +11,29 @@
 			<result type="tiles">d_proyecto_listar</result>
 		</action>
 		
+		<action name="buscarProyecto" class="com.gestproy.actions.ProyectoAction" method="buscar">
+			<result type="tiles">d_proyecto_listar</result>
+		</action>
+		
+		<action name="cargarRegistrarProyecto" class="com.gestproy.actions.ProyectoAction" method="cargarRegistrar">
+			<result type="tiles">d_proyecto_registrar</result>
+		</action>
+		
+		<action name="registrarProyecto" class="com.gestproy.actions.ProyectoAction" method="registrar">
+			<result type="tiles">d_proyecto_listar</result>
+		</action>
+		
+		<action name="cargarActualizarProyecto" class="com.gestproy.actions.ProyectoAction" method="cargarActualizar">
+			<result type="tiles">d_proyecto_actualizar</result>
+		</action>
+		
+		<action name="actualizarProyecto" class="com.gestproy.actions.ProyectoAction" method="actualizar">
+			<result type="tiles">d_proyecto_listar</result>
+		</action>
+		
+		<action name="eliminarProyecto" class="com.gestproy.actions.ProyectoAction" method="eliminar">
+			<result type="tiles">d_proyecto_listar</result>
+		</action>
+		
 	</package>
 </struts>

@@ -3,6 +3,45 @@
 
 <mapper namespace="com.gestproy.mybatis.dao.ProyectoMapper">
 
+	<insert id="registrarProyecto" parameterType="ProyectoDTO" statementType="CALLABLE">
+	   {call sp_proyecto_insertar(#{proyectoId,mode=OUT,jdbcType=INTEGER}, 
+								  #{descripcion,mode=IN}, 
+								  #{estado,mode=IN}, 
+								  #{portafolio.portafolioId,mode=IN})};
+	</insert>
 
+	<update id="actualizarProyecto" parameterType="ProyectoDTO">
+		{ call sp_proyecto_actualizar(#{proyectoId},
+									  #{descripcion},
+									  #{estado},
+									  #{portafolio.portafolioId})}
+	</update>
+
+	<delete id="eliminarProyectos" parameterType="String">
+		{ call sp_proyecto_eliminar(#{codigos, jdbcType=VARCHAR})}
+	</delete>
+
+	<select id="listarProyectos" parameterType="ProyectoDTO" resultMap="rListar" statementType="CALLABLE">
+		{ call sp_proyecto_listar(#{proyectoId, jdbcType=BIGINT}, 
+                                  #{descripcion, jdbcType=VARCHAR}, 
+                                  #{estado, jdbcType=VARCHAR},
+                                  #{portafolio.portafolioId, jdbcType=VARCHAR})}
+	</select>
+
+	<select id="obtenerProyecto" parameterType="ProyectoDTO" resultMap="rListar">
+		select p.proyectoId, p.descripcion PDescripcion, p.estado, pf.portafolioId, pf.descripcion PFDescripcion 
+		from tb_proyecto p
+		inner join tb_portafolio pf on p.portafolioId = pf.portafolioId
+		where p.proyectoId = #{proyectoId}
+	</select>
+	
+	<!-- RESULTS MAPS -->
+	<resultMap id="rListar" type="ProyectoDTO" >
+        <result property="proyectoId"                         	column="ProyectoId" />
+        <result property="descripcion"                      	column="PDescripcion" />
+        <result property="estado"             					column="Estado" />
+        <result property="portafolio.portafolioId"              column="PortafolioId" />
+        <result property="portafolio.descripcion"               column="PFDescripcion" />
+    </resultMap> 
 
 </mapper>
