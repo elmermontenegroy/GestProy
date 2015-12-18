@@ -14,7 +14,7 @@ public interface DocumentoMapper {
 
 	public int registrarDocumento(DocumentoDTO documento);
 	public void actualizarDocumento(DocumentoDTO documento);
-	public void eliminarDocumento(int codigo);
+	public void eliminarDocumento(String codigos);
 	public List<DocumentoDTO>listarDocumentos(DocumentoDTO documento);
 	public DocumentoDTO obtenerDocumento(int codigo);
 	

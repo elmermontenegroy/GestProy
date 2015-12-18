@@ -1,31 +1,64 @@
-<%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib prefix="s"  uri="/struts-tags" %>
 
 <div id="page-wrapper">
 	<div class="container-fluid">
-	    
-	    <div class="row">
-	        <div class="col-md-12">
-	            <h1 class="page-header">
-	                <s:text name="modulo.documento.desc" />
-	            </h1>
-	        </div>
-	    </div>
-	    
-	    <div class="row">
-	        <div class="col-md-12">
+       	<div class="base">
 
-				<s:form action="registrarDocumento" namespace="/documento">
-				
-					<s:textfield name="documento.documentoId" label="Documento Id"/>
-					<s:textfield name="documento.proyecto.proyectoId" label="Proyecto Id"/>
-					<s:textfield name="documento.nombre" label="Nombre"/>
-					<s:textfield name="documento.fechaInicio" label="Fecha Inicio"/>
-					
-					<s:submit value="Registrar"/>
-				</s:form>
-				<p><a href="<s:url action="inicializarDocumento" namespace="/documento"/>">Cancelar</a></p>
-				
+       		<div class="cabecera">
+				<div class="row">
+			        <div class="col-md-12">
+			            <h1 class="page-header">
+			                <s:text name="md_titulo_insertar"/>
+			            </h1>
+			        </div>
+			    </div>
+			    <hr>
 			</div>
-	    </div>
+			<form class="form-horizontal" role="form">
+				<div class="cuerpo">
+					<div class="form-group">
+					
+						<label class="control-label col-md-2" for="txtDescripcion">
+							<s:text name="tb_documento_nombre"/>:
+						</label>
+						
+					    <div class="col-md-2">
+					      <input type="text" class="form-control" id="txtDescripcion" name="documento.nombre">
+					    </div>
+					    
+					    
+					    <label class="control-label col-md-2" for="cboFecha">
+					    	<s:text name="tb_documento_fechainicio"/>:
+					    </label>
+					    
+					    <div class="col-md-2">
+					      <input type="date" class="form-control" id="txtDescripcion" name="documento.fechaInicio">
+					    </div>
+					   
+					    
+					    <label class="control-label col-md-2" for="cboProyecto">
+					    	<s:text name="tb_documento_proyecto"/>:
+					    </label>
+					    <div class="col-md-2">
+					      <select id="cboProyecto" name="documento.proyecto.proyectoId" class="form-control">
+					      	<s:iterator value="proyectos" var="py" >
+					      		<option value='<s:property value="#py.proyectoId"/>'><s:property value="#py.descripcion"/></option>
+					      	</s:iterator>
+						  </select>
+					    </div>
+					    
+					</div>
+				</div>
+			
+			
+				<div class="pie">
+					<hr>
+					<div class="form-inline" role="form">
+					    <button type="submit" class="btn btn-default" formaction="/GestProy/documento/registrarDocumento.action" formmethod="post"><s:text name="g_guardar"/></button>
+						<button type="submit" class="btn btn-default" formaction="/GestProy/documento/inicializarDocumento.action" formmethod="post"><s:text name="g_cancelar"/></button>
+					</div>
+				</div>	
+			</form>
+       	</div>
 	</div>
 </div>

@@ -11,6 +11,10 @@
 			<result type="tiles">d_documento_listar</result>
 		</action>
 			
+		<action name="buscarDocumento" class="com.gestproy.actions.DocumentoAction" method="buscar">
+			<result type="tiles">d_documento_listar</result>
+		</action>
+			
 		<action name="cargarRegistrarDocumento" class="com.gestproy.actions.DocumentoAction" method="cargarRegistrar">
 			<result type="tiles">d_documento_registrar</result>
 		</action>

@@ -14,24 +14,19 @@ public class TestDocumento {
 	
    DocumentoService servDocumento = new DocumentoService();
    
-    //@Test 
-	public void Eliminar(){
-		
-		servDocumento.eliminarDocumento(4);
-		
-	}
+   
     //@Test
 	public void Registrar(){
 		
 		DocumentoDTO documento = new DocumentoDTO();
 		documento.setProyecto(new ProyectoDTO());
-		documento.setDocumentoId(4);
+		//documento.setDocumentoId();
 		documento.setNombre("documento4");
 		documento.getProyecto().setProyectoId(1);
 		documento.setFechaInicio("2015-11-11");
 		
 	    servDocumento.registrarDocumento(documento);
-	
+	    System.out.println("codigo:" + documento.getDocumentoId());
 	}
 	 
     //@Test
@@ -39,12 +34,14 @@ public class TestDocumento {
     	
     	DocumentoDTO documento = new DocumentoDTO();
     	documento.setProyecto(new ProyectoDTO());
-    	documento.setDocumentoId(4);
+    	documento.setDocumentoId(3);
     	documento.getProyecto().setProyectoId(1);
     	documento.setNombre("Tareita4");
     	documento.setFechaInicio("2016-12-12");
     	
     	servDocumento.actualizarDocumento(documento);
+
+	    System.out.println("codigo:" + documento.getProyecto());
     
     	
     }

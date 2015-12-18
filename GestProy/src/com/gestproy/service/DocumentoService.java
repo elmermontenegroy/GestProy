@@ -41,10 +41,10 @@ public class DocumentoService {
 		sesion.close();
 	}
 	
-	public void eliminarDocumento(int codigo) {
+	public void eliminarDocumento(String codigos) {
 		//Acceder al mapper
 		SqlSession sesion = this.obtenerSesion();
-		sesion.getMapper(DocumentoMapper.class).eliminarDocumento(codigo);
+		sesion.getMapper(DocumentoMapper.class).eliminarDocumento(codigos);
 		//Me aseguro que el registro fue eliminado
 		sesion.commit();
 		//Cierro la sesión

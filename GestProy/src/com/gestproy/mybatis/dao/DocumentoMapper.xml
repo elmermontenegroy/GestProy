@@ -4,13 +4,13 @@
 <mapper namespace="com.gestproy.mybatis.dao.DocumentoMapper">
 
  
-	<insert id="registrarDocumento" parameterType="DocumentoDTO" useGeneratedKeys="true" keyProperty="documentoId">
-		insert into tb_documento (documentoId, proyectoId, nombre, fechaInicio)
-		values (#{documentoId}, #{proyecto.proyectoId}, #{nombre}, #{fechaInicio})
-		<selectKey order="AFTER" resultType="int" keyProperty="documentoId">
-			select LAST_INSERT_ID();
-		</selectKey>
+	<insert id="registrarDocumento" parameterType="DocumentoDTO" statementType="CALLABLE">
+		 {call sp_documento_insertar(#{documentoId,mode=OUT,jdbcType=INTEGER}, 
+								  	 #{proyecto.proyectoId,mode=IN}, 
+								 	 #{nombre,mode=IN}, 
+								 	 #{fechaInicio,mode=IN})};
 	</insert>
+
 
 	<update id="actualizarDocumento" parameterType="DocumentoDTO">
 		update tb_documento set proyectoId = #{proyecto.proyectoId}, 
@@ -19,14 +19,20 @@
 		where documentoId = #{documentoId}
 	</update>
 
-	<delete id="eliminarDocumento" parameterType="int">
+	<delete id="eliminarDocumento" parameterType="String">
 		delete from tb_documento where documentoId = #{documentoId}
 	</delete>
 
-	<select id="listarDocumentos" parameterType="DocumentoDTO" resultMap="rListar">
-		select documentoId,proyectoId,nombre,fechaInicio from tb_documento
-	</select>
 
+	
+	<select id="listarDocumentos" parameterType="DocumentoDTO" resultMap="rListar">
+		select d.documentoId, p.descripcion,d.nombre,d.fechaInicio from tb_documento d
+		inner join tb_proyecto p on d.proyectoId = p.proyectoId
+		
+	</select>
+	
+	
+	
 	<select id="obtenerDocumento" resultType="DocumentoDTO" parameterType="DocumentoDTO">
 		select documentoId,proyectoId,nombre,fechaInicio from tb_documento
 		where documentoId = #{documentoId}
@@ -36,8 +42,10 @@
 	<resultMap id="rListar" type="DocumentoDTO" >
         <result property="documentoId"                         	column="DocumentoId" />
         <result property="proyecto.proyectoId"              	column="ProyectoId" />
-       <result property="nombre"                      			column="Nombre" />
+        <result property="nombre"                      			column="Nombre" />
         <result property="fechaInicio"                      	column="FechaInicio" />
+        <result property="proyecto.descripcion"               column="Descripcion" />
+        
     </resultMap>
 
 </mapper>
