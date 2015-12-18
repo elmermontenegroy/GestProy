@@ -50,7 +50,7 @@ private static final long serialVersionUID = 1470228705843594914L;
 		return SUCCESS;
 	}
 	public String cargarActualizar(){
-		proyecto = servicioProyecto.obtenerProyecto(proyecto.getProyectoId());
+		documento = servicioDocumento.obtenerDocumento(documento.getDocumentoId());
 		return SUCCESS;
 	}
 	

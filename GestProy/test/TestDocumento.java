@@ -29,12 +29,12 @@ public class TestDocumento {
 	    System.out.println("codigo:" + documento.getDocumentoId());
 	}
 	 
-    //@Test
+    @Test
     public void Actualizar(){
     	
     	DocumentoDTO documento = new DocumentoDTO();
     	documento.setProyecto(new ProyectoDTO());
-    	documento.setDocumentoId(3);
+    	documento.setDocumentoId(2);
     	documento.getProyecto().setProyectoId(1);
     	documento.setNombre("Tareita4");
     	documento.setFechaInicio("2016-12-12");
@@ -48,7 +48,7 @@ public class TestDocumento {
 	
    
    
-	@Test
+	//@Test
 	public void test() {
 	
 		List<DocumentoDTO> documentos;
